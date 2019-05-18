@@ -1,7 +1,7 @@
-window.onload = function (){
-	var hp = 3;
+
+	var hp = 200;
 	var fullHP = hp;
-	var damage = 3;
+	var damage = 1;
 
 	function reduceHP () {
 		if (hp <= 0) {
@@ -9,8 +9,8 @@ window.onload = function (){
 	    } else {
 	    	hp = Math.max(0, hp - damage);
 			let width = (hp / fullHP * 100); 
-			currentHealth.style.width = Math.max(width, 0.0) + '%'; 
-	  }
+			document.getElementById("healthBar").style.width = Math.max(width, 0.0) + '%'; 
+	  	}
 	};
 
 	function resetHP(){
@@ -19,5 +19,5 @@ window.onload = function (){
 		damage = document.getElementById("damage").value;
 		fullHP = hp;
 	};
-};
+
 

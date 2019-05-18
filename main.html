@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        <script type="text/javascript" src="scripts/healthBar.js"></script>
         <div id="main_container">
             <div id="player">
                 <div id="player_image"></div>
@@ -18,9 +19,10 @@
                 <div id="mob">
                     <div id="mob_health_bar">
                         <div id="bar">
-                        <div id="healthBar"></div>
+                            <div id="healthBar"></div>
+                        </div>
                     </div>
-                    <div id="mob_image"></div>
+                    <div id="mob_image" onclick="reduceHP()"></div>
                 </div>
                 <div id="location">
                     <h1>Bioms</h1>

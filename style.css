@@ -107,11 +107,11 @@ div.upgrades_list {
 div#bar{
     border: solid 2px black;
     margin: auto;
-    width: 20%;
+    width: 70%;
     height: 15px;   
 }
 div#healthBar{
-    width: 5%;
+    width: 100%;
     height: 100%;
     background: #e74c3c;    
 }
