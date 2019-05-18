@@ -47,7 +47,7 @@ div#mob_health_bar {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    height: 100px;
+    height: 80px;
 }
 div#bar{
     border: solid 2px black;
@@ -62,11 +62,20 @@ div#healthBar{
 div#mob_image {
     display: inline-block;
     background-image: url("https://static.turbosquid.com/Preview/2016/03/14__23_58_21/MinecraftCreeper02.jpg2a29f0cd-04de-4935-998b-8fe7735414efOriginal.jpg");
-    background-size: contain;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
     width: 300px;
-    height: 400px;
+    height: 350px;
+}
+div#fight_button p {
+    display: inline-block;
+    background-color: red;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px 0px; 
+    font-size: 150%;
 }
 
 div#location {
@@ -110,7 +119,7 @@ div#upgrades {
     text-align: center;
 }
 div.upgrades_list {
-    overflow-y: scroll;
+    overflow: auto;
     border: 1px solid black;
     border-radius: 15px 0px 0px 15px;
     width: 90%;
