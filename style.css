@@ -2,7 +2,6 @@
     margin: 0px;
     padding: 0px;
 }
-
 div#main_container {
     display: flex;
     flex-direction: row;
@@ -10,6 +9,7 @@ div#main_container {
     justify-content: flex-start;
     align-items: flex-start;
 }
+
 
 div#player {
     box-sizing: border-box;
@@ -26,6 +26,7 @@ div#player_image {
 div#player_stats {
     
 }
+
 
 div#center_container {
     box-sizing: border-box;
@@ -48,6 +49,16 @@ div#mob_health_bar {
     align-items: center;
     height: 100px;
 }
+div#bar{
+    border: solid 2px black;
+    width: 20%;
+    height: 15px;   
+}
+div#healthBar{
+    background-color: #e74c3c;    
+    width: 5%;
+    height: 100%;
+}
 div#mob_image {
     display: inline-block;
     background-image: url("https://static.turbosquid.com/Preview/2016/03/14__23_58_21/MinecraftCreeper02.jpg2a29f0cd-04de-4935-998b-8fe7735414efOriginal.jpg");
@@ -57,6 +68,7 @@ div#mob_image {
     width: 300px;
     height: 400px;
 }
+
 div#location {
     display: inline-flex;
     flex-direction: row;
@@ -103,15 +115,4 @@ div.upgrades_list {
     border-radius: 15px 0px 0px 15px;
     width: 90%;
     height: 45%;
-}
-div#bar{
-    border: solid 2px black;
-    margin: auto;
-    width: 20%;
-    height: 15px;   
-}
-div#healthBar{
-    width: 5%;
-    height: 100%;
-    background: #e74c3c;    
 }
