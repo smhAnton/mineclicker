@@ -5,8 +5,9 @@
         <title>Minecraft Cool Game</title>
         <link rel="stylesheet" href="style.css">
     </head>
-    <body>
+    <body onload="load()">
         <script type="text/javascript" src="scripts/healthBar.js"></script>
+        <script type="text/javascript" src="data/data.json"></script>
         <div id="main_container">
             <div id="player">
                 <div id="player_image"></div>
@@ -25,6 +26,9 @@
                         </div>
                     </div>
                     <div id="mob_image" onclick="reduceHP()"></div>
+                    <div id="fight_button">
+                        <p>Fight!</p>
+                    </div>
                 </div>
 
                 <div id="location">
