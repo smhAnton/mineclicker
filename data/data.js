@@ -140,3 +140,49 @@
         ]
     }
 ];
+
+
+permanentUpgrades = 
+[
+{
+    topName: "1 First",
+    cost: 1,
+    bonus 1,
+    icon: ""
+}
+,
+{
+    topName: "2 First",
+    cost: 1,
+    bonus 1,
+    icon: ""
+}
+,
+{
+    topName: "3 First",
+    cost: 1,
+    bonus 1,
+    icon: ""
+}
+,
+{
+    topName: "4 First",
+    cost: 1,
+    bonus 1,
+    icon: ""
+}
+,
+{
+    topName: "5 First",
+    cost: 1,
+    bonus 1,
+    icon: ""
+}
+,
+{
+    topName: "6 First",
+    cost: 1,
+    bonus 1,
+    icon: ""
+}
+];

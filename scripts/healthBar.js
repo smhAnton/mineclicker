@@ -8,6 +8,13 @@ function load(){
 	console.log(bioms[2]);
 }
 
+function makeList(object, parent){
+	for(var i in object) {
+		var element = "";
+		element += '<div class="kuku">' + '</div>';
+	}
+}
+
 function reduceHP () {
 	if (hp <= 0) {
 		alert("Already Dead");
