@@ -5,7 +5,7 @@ var bioms;
 
 function load(){
 	bioms = data;
-	console.log(bioms);
+	console.log(bioms[2]);
 }
 
 function reduceHP () {
