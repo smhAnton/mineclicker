@@ -4,7 +4,8 @@ var damage = 3;
 var bioms;
 
 function load(){
-	bioms = JSON.parse(data);
+	bioms = data;
+	console.log(bioms[2].mobs[0]);
 }
 
 function reduceHP () {

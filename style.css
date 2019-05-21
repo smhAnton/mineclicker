@@ -52,7 +52,7 @@ div#mob_health_bar {
 div#bar{
     border: solid 2px black;
     width: 70%;
-    height: 17px;   
+    height: 18px;   
 }
 div#healthBar{
     background-color: #e74c3c;    
