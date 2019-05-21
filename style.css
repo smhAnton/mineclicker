@@ -111,28 +111,57 @@ div.biom {
 }
 
 
-div#upgrades {
+div#upgrades_container {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid black;
-    border-radius: 15px 0px 0px 15px;
+    border: 5px solid black;
     padding: 10px;
     width: 30%;
     height: 100vh;
 }
-#upgrades h1 {
-    text-align: center;
-}
 div.upgrades_list {
     overflow: auto;
-    border: 1px solid black;
-    border-radius: 15px 0px 0px 15px;
+    border: 3px solid black;
     width: 90%;
     height: 45%;
+}
+div.upgrade {
+    box-sizing: border-box;
+    background-color: #212121;
+    border: 2px solid #555651;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+div.upgrade div.upgrade_photo_container {
+    display: inline-block;
+    width: 20%;
+    margin-right: 10px;
+}
+div.upgrade div.upgrade_photo {
+    background-image: url("http://www.canteach.ca/minecraft-pe/images/wooden_pickaxe.gif");
+    background-size: 100% 100%;
+    padding: 50% 0px 50% 0px;
+}
+div.upgrade_description {
+    display: inline-block;
+    width: 80%;
+}
+div.upgrade h1 {
+    display: inline-block;
+    margin-bottom: 5px;
+    color: #fcff03;
+}
+div.upgrade p {
+    display: inline-block;
+    color: #ffffff;
 }
 
 
