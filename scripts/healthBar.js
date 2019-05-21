@@ -5,7 +5,7 @@ var bioms;
 
 function load(){
 	bioms = data;
-	console.log(bioms[2].mobs[0]);
+	console.log(bioms);
 }
 
 function reduceHP () {
@@ -15,8 +15,7 @@ function reduceHP () {
     	hp = Math.max(0, hp - damage);
 		let width = (hp / fullHP * 100); 
 		document.getElementById("healthBar").style.width = Math.max(width, 0.0) + '%';
-  }
-  
+  	}
 };
 
 function resetHP(){
@@ -24,7 +23,8 @@ function resetHP(){
 	hp = document.getElementById("HP").value;
 	damage = document.getElementById("damage").value;
 	fullHP = hp;
-
 };
+
+
 
 
