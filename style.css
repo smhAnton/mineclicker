@@ -8,6 +8,10 @@ body {
 * {
     margin: 0px;
     padding: 0px;
+    -ms-user-select: none; 
+    -moz-user-select: none; 
+    -webkit-user-select: none; 
+    user-select: none; 
 }
 
 
@@ -158,10 +162,12 @@ div.upgrade h1 {
     display: inline-block;
     margin-bottom: 5px;
     color: #fcff03;
+    font-size: 1vw;
 }
 div.upgrade p {
     display: inline-block;
     color: #ffffff;
+    font-size: 1vw;
 }
 
 
