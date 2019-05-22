@@ -142,53 +142,53 @@
 ];
 
 
-permanentUpgrades = 
-[
-{
-    "topName": "1 First",
-    "cost": 1, 
-    "bonus": 1,
-    "icon": "https://c-5uwzmx78pmca90x24oiumx78mlqix2ekczamklvx2ekwu.g00.gamepedia.com/g00/3_c-5uqvmkzinb-zc.oiumx78mlqi.kwu_/c-5UWZMXPMCA90x24pbbx78ax3ax2fx2foiumx78mlqi.kczamklv.kwux2fuqvmkzinb_zc_oiumx78mlqix2f7x2f7mx2fx25L8x2572x25L8x25J3x25L9x2568x25L8x25J3x25L8x25J0x25L9x256Nx25L8x25JLx25L8x25JLx25L8x25J8x25L9x256N_x25L8x25JKx25L8x25JMx25L9x2560x25L9x256Jx25L8x25J1x25L8x25J8.x78vox3fdmzaqwvx3d9804k36im12m0kj14i7jj5jj2kj6j9j8x26q98k.uizsx3dquiom_$/$/$/$/$",
-    "alreadySold": false
-}
-,
-{
-    "topName": "2 First",
-    "cost": 1,
-    "bonus": 1,
-    "icon": "https://c-5uwzmx78pmca90x24oiumx78mlqix2ekczamklvx2ekwu.g00.gamepedia.com/g00/3_c-5uqvmkzinb-zc.oiumx78mlqi.kwu_/c-5UWZMXPMCA90x24pbbx78ax3ax2fx2foiumx78mlqi.kczamklv.kwux2fuqvmkzinb_zc_oiumx78mlqix2f6x2f65x2fx25L8x2572x25L8x25J3x25L9x2568x25L8x25J3x25L8x25J0x25L9x256Nx25L8x25JLx25L8x25JLx25L8x25J8x25L9x256N_x25L8x25JJx25L8x25JMx25L8x25JNx25L8x25J8x25L9x2560x25L8x25J8.x78vox3fdmzaqwvx3djl6l0nk5nj289m5j1k678m95i7j13543x26q98k.uizsx3dquiom_$/$/$/$/$",
-    "alreadySold": false
-}
-,
-{
-    "topName": "3 First",
-    "cost": 1,
-    "bonus": 1,
-    "icon": "https://c-5uwzmx78pmca90x24oiumx78mlqix2ekczamklvx2ekwu.g00.gamepedia.com/g00/3_c-5uqvmkzinb-zc.oiumx78mlqi.kwu_/c-5UWZMXPMCA90x24pbbx78ax3ax2fx2foiumx78mlqi.kczamklv.kwux2fuqvmkzinb_zc_oiumx78mlqix2f0x2f02x2fx25L8x2572x25L8x25J3x25L9x2568x25L8x25J3x25L8x25J0x25L9x256Nx25L8x25JLx25L8x25JLx25L9x256Jx25L8x25J7_x25L9x2560x25L8x25JMx25L8x25JNx25L8x25JMx25L9x2568.x78vox3fdmzaqwvx3d6i4m5n3337jnm5076kn16ii74mi5l470x26q98k.uizsx3dquiom_$/$/$/$/$",
-    "alreadySold": false
-}
-,
-{
-    "topName": "4 First",
-    "cost": 1,
-    "bonus": 1,
-    "icon": "https://c-5uwzmx78pmca90x24oiumx78mlqix2ekczamklvx2ekwu.g00.gamepedia.com/g00/3_c-5uqvmkzinb-zc.oiumx78mlqi.kwu_/c-5UWZMXPMCA90x24pbbx78ax3ax2fx2foiumx78mlqi.kczamklv.kwux2fuqvmkzinb_zc_oiumx78mlqix2f0x2f06x2fx25L8x2572x25L8x25J3x25L9x2568x25L8x25J3x25L8x25J0x25L9x256Nx25L8x25JLx25L8x25JLx25L8x25J8x25L9x256N_x25L8x25JIx25L8x25J6x25L9x2568x25L8x25JIx25L8x25J8.x78vox3fdmzaqwvx3dj7kml4jnij07j605l5111ii0j0322859x26q98k.uizsx3dquiom_$/$/$/$/$",
-    "alreadySold": false
-}
-,
-{
-    "topName": "5 First",
-    "cost": 1,
-    "bonus": 1,
-    "icon": "https://c-5uwzmx78pmca90x24oiumx78mlqix2ekczamklvx2ekwu.g00.gamepedia.com/g00/3_c-5uqvmkzinb-zc.oiumx78mlqi.kwu_/c-5UWZMXPMCA90x24pbbx78ax3ax2fx2foiumx78mlqi.kczamklv.kwux2fuqvmkzinb_zc_oiumx78mlqix2fnx2fn1x2fx25L8x2572x25L8x25J3x25L9x2568x25L8x25J3x25L8x25J0x25L9x256Nx25L8x25JLx25L8x25JLx25L9x256Jx25L8x25J7_x25L8x25JKx25L8x25J3x25L9x2565.x78vox3fdmzaqwvx3d9683821n409jm0nm7l51n98925140334x26q98k.uizsx3dquiom_$/$/$/$/$",
-    "alreadySold": false
-}
-,
-{
-    "topName": "6 First",
-    "cost": 1,
-    "bonus": 1,
-    "icon": "https://c-5uwzmx78pmca90x24oiumx78mlqix2ekczamklvx2ekwu.g00.gamepedia.com/g00/3_c-5uqvmkzinb-zc.oiumx78mlqi.kwu_/c-5UWZMXPMCA90x24pbbx78ax3ax2fx2foiumx78mlqi.kczamklv.kwux2fuqvmkzinb_zc_oiumx78mlqix2f2x2f2kx2fx25L8x2575x25L8x25J8x25L9x2565x25L8x25J8x25L9x2568x25L8x25JMx25L8x25J0x25L8x25J8x25L8x25JLx25L8x25JLx25L8x25J8x25L9x256N_x25L8x25JIx25L8x25JLx25L8x25J6x25L8x25J1x25L8x25J8.x78vox3fdmzaqwvx3dkkk8nn00935i26i41098j76ijmni8j14x26q98k.uizsx3dquiom_$/$/$/$/$",
-    "alreadySold": false
-}
-];
+permanentUpgrades =
+    [
+        {
+            "topName": "1 First",
+            "cost": 1,
+            "bonus": 1,
+            "icon": "https://c-5uwzmx78pmca90x24oiumx78mlqix2ekczamklvx2ekwu.g00.gamepedia.com/g00/3_c-5uqvmkzinb-zc.oiumx78mlqi.kwu_/c-5UWZMXPMCA90x24pbbx78ax3ax2fx2foiumx78mlqi.kczamklv.kwux2fuqvmkzinb_zc_oiumx78mlqix2f7x2f7mx2fx25L8x2572x25L8x25J3x25L9x2568x25L8x25J3x25L8x25J0x25L9x256Nx25L8x25JLx25L8x25JLx25L8x25J8x25L9x256N_x25L8x25JKx25L8x25JMx25L9x2560x25L9x256Jx25L8x25J1x25L8x25J8.x78vox3fdmzaqwvx3d9804k36im12m0kj14i7jj5jj2kj6j9j8x26q98k.uizsx3dquiom_$/$/$/$/$",
+            "alreadySold": false
+        }
+        ,
+        {
+            "topName": "2 First",
+            "cost": 1,
+            "bonus": 1,
+            "icon": "https://c-5uwzmx78pmca90x24oiumx78mlqix2ekczamklvx2ekwu.g00.gamepedia.com/g00/3_c-5uqvmkzinb-zc.oiumx78mlqi.kwu_/c-5UWZMXPMCA90x24pbbx78ax3ax2fx2foiumx78mlqi.kczamklv.kwux2fuqvmkzinb_zc_oiumx78mlqix2f6x2f65x2fx25L8x2572x25L8x25J3x25L9x2568x25L8x25J3x25L8x25J0x25L9x256Nx25L8x25JLx25L8x25JLx25L8x25J8x25L9x256N_x25L8x25JJx25L8x25JMx25L8x25JNx25L8x25J8x25L9x2560x25L8x25J8.x78vox3fdmzaqwvx3djl6l0nk5nj289m5j1k678m95i7j13543x26q98k.uizsx3dquiom_$/$/$/$/$",
+            "alreadySold": false
+        }
+        ,
+        {
+            "topName": "3 First",
+            "cost": 1,
+            "bonus": 1,
+            "icon": "https://c-5uwzmx78pmca90x24oiumx78mlqix2ekczamklvx2ekwu.g00.gamepedia.com/g00/3_c-5uqvmkzinb-zc.oiumx78mlqi.kwu_/c-5UWZMXPMCA90x24pbbx78ax3ax2fx2foiumx78mlqi.kczamklv.kwux2fuqvmkzinb_zc_oiumx78mlqix2f0x2f02x2fx25L8x2572x25L8x25J3x25L9x2568x25L8x25J3x25L8x25J0x25L9x256Nx25L8x25JLx25L8x25JLx25L9x256Jx25L8x25J7_x25L9x2560x25L8x25JMx25L8x25JNx25L8x25JMx25L9x2568.x78vox3fdmzaqwvx3d6i4m5n3337jnm5076kn16ii74mi5l470x26q98k.uizsx3dquiom_$/$/$/$/$",
+            "alreadySold": false
+        }
+        ,
+        {
+            "topName": "4 First",
+            "cost": 1,
+            "bonus": 1,
+            "icon": "https://c-5uwzmx78pmca90x24oiumx78mlqix2ekczamklvx2ekwu.g00.gamepedia.com/g00/3_c-5uqvmkzinb-zc.oiumx78mlqi.kwu_/c-5UWZMXPMCA90x24pbbx78ax3ax2fx2foiumx78mlqi.kczamklv.kwux2fuqvmkzinb_zc_oiumx78mlqix2f0x2f06x2fx25L8x2572x25L8x25J3x25L9x2568x25L8x25J3x25L8x25J0x25L9x256Nx25L8x25JLx25L8x25JLx25L8x25J8x25L9x256N_x25L8x25JIx25L8x25J6x25L9x2568x25L8x25JIx25L8x25J8.x78vox3fdmzaqwvx3dj7kml4jnij07j605l5111ii0j0322859x26q98k.uizsx3dquiom_$/$/$/$/$",
+            "alreadySold": false
+        }
+        ,
+        {
+            "topName": "5 First",
+            "cost": 1,
+            "bonus": 1,
+            "icon": "https://c-5uwzmx78pmca90x24oiumx78mlqix2ekczamklvx2ekwu.g00.gamepedia.com/g00/3_c-5uqvmkzinb-zc.oiumx78mlqi.kwu_/c-5UWZMXPMCA90x24pbbx78ax3ax2fx2foiumx78mlqi.kczamklv.kwux2fuqvmkzinb_zc_oiumx78mlqix2fnx2fn1x2fx25L8x2572x25L8x25J3x25L9x2568x25L8x25J3x25L8x25J0x25L9x256Nx25L8x25JLx25L8x25JLx25L9x256Jx25L8x25J7_x25L8x25JKx25L8x25J3x25L9x2565.x78vox3fdmzaqwvx3d9683821n409jm0nm7l51n98925140334x26q98k.uizsx3dquiom_$/$/$/$/$",
+            "alreadySold": false
+        }
+        ,
+        {
+            "topName": "6 First",
+            "cost": 1,
+            "bonus": 1,
+            "icon": "https://c-5uwzmx78pmca90x24oiumx78mlqix2ekczamklvx2ekwu.g00.gamepedia.com/g00/3_c-5uqvmkzinb-zc.oiumx78mlqi.kwu_/c-5UWZMXPMCA90x24pbbx78ax3ax2fx2foiumx78mlqi.kczamklv.kwux2fuqvmkzinb_zc_oiumx78mlqix2f2x2f2kx2fx25L8x2575x25L8x25J8x25L9x2565x25L8x25J8x25L9x2568x25L8x25JMx25L8x25J0x25L8x25J8x25L8x25JLx25L8x25JLx25L8x25J8x25L9x256N_x25L8x25JIx25L8x25JLx25L8x25J6x25L8x25J1x25L8x25J8.x78vox3fdmzaqwvx3dkkk8nn00935i26i41098j76ijmni8j14x26q98k.uizsx3dquiom_$/$/$/$/$",
+            "alreadySold": false
+        }
+    ];

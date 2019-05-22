@@ -5,22 +5,35 @@ var bioms;
 
 function load(){
 	bioms = data;
-	console.log(bioms[2]);
 	makeList(permanentUpgrades, document.getElementById("perhit"));
 }
 
-function makeList(object, parent){
-	for(var i in object) {
+function makeList(object, parent) {
+	for (var i = 0; i < object.length; i++) {
 		var curObject = document.createElement('div');
-		var curUpgrade = "";
 		curObject.className = "upgrade";
+
+		var curUpgrade = "";
 		curUpgrade = '<div class="upgrade_photo_container">';
 		curUpgrade += '<div class="upgrade_photo" style="background-image: url(' + '\'' + object[i].icon +  '\'' +')"></div></div>';
 		curUpgrade += '<div class="upgrade_description">';
 		curUpgrade += '<h1>' + object[i].topName + '</h1>';
-		curUpgrade += '<p>Дает ' + object[i].bonus + ' к урону, стоит - ' + object[i].cost 
-			+ ' золота</p>';
+		curUpgrade += '<p>Дает ' + object[i].bonus + ' к урону, стоит - ' + object[i].cost + ' золота</p></div>'; //ты тут забыл дивку закрыть
 		curObject.innerHTML = curUpgrade;
+
+		curObject.onclick = function () {
+			var local_i = i, elem = curObject;
+			return function () {
+				console.log(local_i, elem);
+			};
+		}();
+		/*
+			Объясню что я сделал сверху
+			С написал функцию, которая сразу исполняется и возвращает другую функцию
+			Зачем? Если мы будем использовать просто так, то переменная i всегда будет иметь последнее принятое значение (6 в данном случае)
+			А так я делаю её копию, и тогда она всегда будет равна значению, принятому на моменте исполнения функции
+		*/
+
 		parent.appendChild(curObject);
 	}
 }
