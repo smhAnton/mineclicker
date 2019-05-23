@@ -5,6 +5,7 @@ var xpGoal = 1000;
 var curLevel = 1;
 var curMob;
 var hp;
+var coin = 0;
 
 function load(){
 	bioms = data;
@@ -14,7 +15,7 @@ function load(){
 }
 
 function statUpdate() {
-	document.getElementById("player_stats").innerHTML = "<p>У вас " + curLevel + " уровень</p>Ваш урон равен " + damage + "</p><p>Количество опыта: " + XP + "</p><p>Количество опыта до следующего уровня: " + xpGoal + "</p>";
+	document.getElementById("player_stats").innerHTML = "<p>У вас " + curLevel + " уровень</p>Ваш урон равен " + damage + "</p><p>Количество опыта: " + XP + "</p><p>Количество опыта до следующего уровня: " + xpGoal + "</p><p>Количество монет: " + coin + "</p>";
 }
 
 function changeMob() {
@@ -42,8 +43,17 @@ function makeList(object, parent) {
 		curObject.onclick = function () {
 			let local_i = i, elem = curObject;
 			return function () {
-				console.log(local_i, elem);
+				if(permanentUpgrades[local_i].cost <= coin && !permanentUpgrades[local_i].status) {
+				coin -= permanentUpgrades[local_i].cost;
+				damage += permanentUpgrades[local_i].bonus;
+				permanentUpgrades[local_i].status = true;
+				curObject.style.backgroundColor = '#009432';
+				statUpdate;
+				} else {
+					console.log('Данный апгрейд приобретен или вам не хватает средств');
+				}
 			};
+
 		}();
 		parent.appendChild(curObject);
 	}
@@ -51,6 +61,7 @@ function makeList(object, parent) {
 
 function reduceHP () {
 	hp = Math.max(0, hp - damage);
+	coin += damage;
 	let width = (hp / curMob.HP * 100); 
 	document.getElementById("healthBar").style.width = Math.max(width, 0.0) + '%';
 	console.log("curHP: " + hp + " maxHP: " + curMob.HP);
