@@ -1,19 +1,37 @@
-var hp = 1000;
-var fullHP = hp;
-var damage = 3;
+var damage = 1;
 var bioms;
+var XP = 0;
+var xpGoal = 1000;
+var curLevel = 1;
+var curMob;
+var hp;
 
 function load(){
 	bioms = data;
 	makeList(permanentUpgrades, document.getElementById("perhit"));
+	statUpdate(); 
+	changeMob();
+}
+
+function statUpdate() {
+	document.getElementById("player_stats").innerHTML = "<p>У вас " + curLevel + " уровень</p>Ваш урон равен " + damage + "</p><p>Количество опыта: " + XP + "</p><p>Количество опыта до следующего уровня: " + xpGoal + "</p>";
+}
+
+function changeMob() {
+	curMob = bioms[0].mobs[0];
+	hp = curMob.HP;
+	let width = (hp / curMob.HP * 100); 
+	document.getElementById("healthBar").style.width = Math.max(width, 0.0) + '%';
+	document.getElementById("current_mob_image").style.backgroundImage = 'url("' + curMob.picture +'")';
 }
 
 function makeList(object, parent) {
-	for (var i = 0; i < object.length; i++) {
-		var curObject = document.createElement('div');
+	let n = object.length;
+	for (let i = 0; i < n; i++) {
+		let curObject = document.createElement('div');
 		curObject.className = "upgrade";
 
-		var curUpgrade = "";
+		let curUpgrade = "";
 		curUpgrade = '<div class="upgrade_photo_container">';
 		curUpgrade += '<div class="upgrade_photo" style="background-image: url(' + '\'' + object[i].icon +  '\'' +')"></div></div>';
 		curUpgrade += '<div class="upgrade_description">';
@@ -22,30 +40,32 @@ function makeList(object, parent) {
 		curObject.innerHTML = curUpgrade;
 
 		curObject.onclick = function () {
-			var local_i = i, elem = curObject;
+			let local_i = i, elem = curObject;
 			return function () {
 				console.log(local_i, elem);
 			};
 		}();
-		/*
-			Объясню что я сделал сверху
-			С написал функцию, которая сразу исполняется и возвращает другую функцию
-			Зачем? Если мы будем использовать просто так, то переменная i всегда будет иметь последнее принятое значение (6 в данном случае)
-			А так я делаю её копию, и тогда она всегда будет равна значению, принятому на моменте исполнения функции
-		*/
-
 		parent.appendChild(curObject);
 	}
 }
 
 function reduceHP () {
-	if (hp <= 0) {
-		alert("Already Dead");
-    } else {
-    	hp = Math.max(0, hp - damage);
-		let width = (hp / fullHP * 100); 
-		document.getElementById("healthBar").style.width = Math.max(width, 0.0) + '%';
-  	}
+	hp = Math.max(0, hp - damage);
+	let width = (hp / curMob.HP * 100); 
+	document.getElementById("healthBar").style.width = Math.max(width, 0.0) + '%';
+	console.log("curHP: " + hp + " maxHP: " + curMob.HP);
+	if(hp == 0) {
+		let xpReward = curMob.XP + Math.round(Math.random() * 7) - 3; 
+		console.log("Вы подебил! Ваша награда: " + xpReward + " опыта");
+		XP += xpReward;
+		if(XP >= xpGoal) {
+			curLevel++;
+			XP -= xpGoal;
+			xpGoal = Math.round(xpGoal * 1.1);
+		}
+		changeMob();
+	}
+  	statUpdate();
 };
 
 function resetHP(){
