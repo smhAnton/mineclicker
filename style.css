@@ -108,10 +108,18 @@ div#location {
     text-align: center;
 }
 div.biom {
+    background-size: cover;
+    background-position: center;
     border: 1px solid black;
     border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
     width: 100px;
     height: 100px;
+    color: red;
 }
 
 
@@ -150,7 +158,6 @@ div.upgrade div.upgrade_photo_container {
     margin-right: 10px;
 }
 div.upgrade div.upgrade_photo {
-    background-image: url("http://www.canteach.ca/minecraft-pe/images/wooden_pickaxe.gif");
     background-size: 100% 100%;
     padding: 50% 0px 50% 0px;
 }
@@ -216,7 +223,6 @@ div.mob h1 {
     color: white;
 }
 div.mob div {
-    background-image: url("https://static.turbosquid.com/Preview/2016/03/14__23_58_21/MinecraftCreeper02.jpg2a29f0cd-04de-4935-998b-8fe7735414efOriginal.jpg");
     background-size: 100% 100%;
     border: 5px solid black;
     width: 100%;

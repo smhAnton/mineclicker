@@ -1,12 +1,12 @@
 var hp = 1000;
 var fullHP = hp;
 var damage = 3;
-var bioms;
 
-function load(){
-	bioms = data;
+window.addEventListener ("load", function () {
 	makeList(permanentUpgrades, document.getElementById("perhit"));
-}
+});
+
+
 
 function makeList(object, parent) {
 	for (var i = 0; i < object.length; i++) {

@@ -1,4 +1,4 @@
-﻿﻿data = [
+﻿﻿bioms = [
     {
         "name": "Зеленые Равнины",
         "picture": "https://img4.minebook.me/gallery/16700_2012-04-13_210206.png",
