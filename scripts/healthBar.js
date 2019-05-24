@@ -33,22 +33,22 @@ function makeList(object, parent) {
 		curObject.className = "upgrade";
 
 		let curUpgrade = "";
-		curUpgrade = '<div class="upgrade_photo_container">';
-		curUpgrade += '<div class="upgrade_photo" style="background-image: url(' + '\'' + object[i].icon +  '\'' +')"></div></div>';
-		curUpgrade += '<div class="upgrade_description">';
-		curUpgrade += '<h1>' + object[i].topName + '</h1>';
-		curUpgrade += '<p>Дает ' + object[i].bonus + ' к урону, стоит - ' + object[i].cost + ' золота</p></div>'; //ты тут забыл дивку закрыть
+		curUpgrade = '<div class="upgrade_photo_container">' + '<div class="upgrade_photo" style="background-image: url(' + '\'' + object[i].icon +  '\'' +')"></div></div>'
+			+ '<div class="upgrade_description">' + '<h1>' + object[i].topName + '</h1><br>' + '<p>Дает ' + object[i].bonus + ' к урону, стоит - ' + object[i].cost + ' золота</p></div>';
 		curObject.innerHTML = curUpgrade;
 
 		curObject.onclick = function () {
-			let local_i = i, elem = curObject;
+			let local_i = i, elem = curObject, curText = curUpgrade;
 			return function () {
 				if(permanentUpgrades[local_i].cost <= coin && !permanentUpgrades[local_i].status) {
 				coin -= permanentUpgrades[local_i].cost;
 				damage += permanentUpgrades[local_i].bonus;
 				permanentUpgrades[local_i].status = true;
 				curObject.style.backgroundColor = '#009432';
-				statUpdate;
+				statUpdate();
+				curText = '<div class="upgrade_photo_container">' + '<div class="upgrade_photo" style="background-image: url(' + '\'' + object[i].icon +  '\'' +')"></div></div>'
+					+ '<div class="upgrade_description">' + '<h1>' + object[i].topName + '</h1><br>' + '<p>Куплено</p>';
+				curObject.innerHTML = curText;
 				} else {
 					console.log('Данный апгрейд приобретен или вам не хватает средств');
 				}
