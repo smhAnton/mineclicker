@@ -23,11 +23,18 @@ div#main_container {
     align-items: flex-start;
 }
 
+div#left_container {
+    box-sizing: border-box;
+    width: 33%;
+    border: 5px solid black;
+    height: 100vh;
+}
 
 div#player {
     box-sizing: border-box;
-    width: 30%;
-    border: 1px solid black;
+    width: 100%;
+    height: 60%;
+    border: 0px solid black;
 }
 div#player_image {
     background-image: url("img/steve.png");
@@ -39,7 +46,21 @@ div#player_image {
 div#player_stats {
     
 }
-
+div#stats {
+    box-sizing: border-box;
+    border-top: 5px solid black;
+    height: 33%;
+    padding: 25px 25px 25px 25px;
+    justify-content: space-between;
+}
+div#stat_block {
+    box-sizing: border-box;
+    border: 3px solid black;
+    display: inline-block;
+    width: 27%;
+    height: 50%;
+    margin: 15px 15px 15px 15px;
+}
 
 div#center_container {
     box-sizing: border-box;
@@ -97,10 +118,12 @@ div#location {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid black;
-    border-radius: 15px 15px 0px 0px;
-    width: 90%;
+    border: 5px solid black;
+    width: 650px;
+    height: 15%;
     padding: 15px 15px 15px 15px;
+    background-image: url("http://4.bp.blogspot.com/-sac2Slfk3Pc/T6AuMCIWdoI/AAAAAAAABOU/6IlxXPQ0vlg/s1600/minecraft_cobble.jpg");
+
 }  
 #location h1 {
     width: 100%;
@@ -110,15 +133,15 @@ div#location {
 div.biom {
     background-size: cover;
     background-position: center;
-    border: 1px solid black;
+    border: 3px solid black;
     border-radius: 15px;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    width: 100px;
-    height: 100px;
+    width: 15%;
+    height: 70%;
     color: red;
 }
 
