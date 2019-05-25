@@ -2,10 +2,10 @@ var damage = 1;
 var bioms;
 var XP = 0;
 var xpGoal = 1000;
-var curLevel = 1;
+var curLevel = 24;
 var curMob;
 var HP, fullHP;
-var coin = 0;
+var coin = 90;
 
 window.addEventListener ("load", function () {
 	makeList(permanentUpgrades, document.getElementById("perhit"));
@@ -19,8 +19,8 @@ function statUpdate() {
 
 function changeMob() {
 	curMob = bioms[0].mobs[0];
-	hp = curMob.HP;
-	let width = (hp / curMob.HP * 100); 
+	HP = curMob.HP;
+	let width = (HP / curMob.HP * 100); 
 	document.getElementById("healthBar").style.width = Math.max(width, 0.0) + '%';
 	document.getElementById("current_mob_image").style.backgroundImage = 'url("' + curMob.picture +'")';
 }
@@ -36,7 +36,7 @@ function makeList(object, parent) {
 		curUpgrade += '<div class="upgrade_photo" style="background-image: url(' + '\'' + object[i].icon +  '\'' +')"></div></div>';
 		curUpgrade += '<div class="upgrade_description">';
 		curUpgrade += '<h1>' + object[i].topName + '</h1>';
-		curUpgrade += '<p>Дает ' + object[i].bonus + ' к урону, стоит - ' + object[i].cost + ' золота</p></div>'; //ты тут забыл дивку закрыть
+		curUpgrade += '<p>Дает ' + object[i].bonus + ' к урону, стоит - ' + object[i].cost + ' золота</p></div>';
 		curObject.innerHTML = curUpgrade;
 
 		curObject.onclick = function () {
@@ -47,7 +47,7 @@ function makeList(object, parent) {
 				damage += permanentUpgrades[local_i].bonus;
 				permanentUpgrades[local_i].status = true;
 				curObject.style.backgroundColor = '#009432';
-				statUpdate;
+				statUpdate();
 				} else {
 					console.log('Данный апгрейд приобретен или вам не хватает средств');
 				}
@@ -59,12 +59,12 @@ function makeList(object, parent) {
 }
 
 function reduceHP () {
-	hp = Math.max(0, hp - damage);
+	HP = Math.max(0, HP - damage);
 	coin += damage;
-	let width = (hp / curMob.HP * 100); 
+	let width = (HP / curMob.HP * 100); 
 	document.getElementById("healthBar").style.width = Math.max(width, 0.0) + '%';
-	console.log("curHP: " + hp + " maxHP: " + curMob.HP);
-	if(hp == 0) {
+	console.log("curHP: " + HP + " maxHP: " + curMob.HP);
+	if(HP == 0) {
 		let xpReward = curMob.XP + Math.round(Math.random() * 7) - 3; 
 		console.log("Вы подебил! Ваша награда: " + xpReward + " опыта");
 		XP += xpReward;
@@ -80,8 +80,8 @@ function reduceHP () {
 
 function resetHP(){
 	document.getElementById("healthBar").style.width = '100%';
-	hp = document.getElementById("HP").value;
+	HP = document.getElementById("HP").value;
 	damage = document.getElementById("damage").value;
-	fullHP = hp;
+	fullHP = HP;
 };
 

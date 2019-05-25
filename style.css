@@ -23,6 +23,7 @@ div#main_container {
     align-items: flex-start;
 }
 
+
 div#left_container {
     box-sizing: border-box;
     width: 33%;
@@ -62,6 +63,7 @@ div#stat_block {
     margin: 15px 15px 15px 15px;
 }
 
+
 div#center_container {
     box-sizing: border-box;
     display: flex;
@@ -72,6 +74,7 @@ div#center_container {
     width: 40%;
     height: 100vh;
 }
+
 div#current_mob {
     text-align: center;
 }
@@ -113,35 +116,39 @@ div#fight_button p {
 }
 
 div#location {
+    box-sizing: border-box;
+    background-image: url("http://4.bp.blogspot.com/-sac2Slfk3Pc/T6AuMCIWdoI/AAAAAAAABOU/6IlxXPQ0vlg/s1600/minecraft_cobble.jpg");
+    background-size: cover;
     display: inline-flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     border: 5px solid black;
-    width: 650px;
-    height: 15%;
+    width: 80%;
     padding: 15px 15px 15px 15px;
-    background-image: url("http://4.bp.blogspot.com/-sac2Slfk3Pc/T6AuMCIWdoI/AAAAAAAABOU/6IlxXPQ0vlg/s1600/minecraft_cobble.jpg");
-
 }  
 #location h1 {
     width: 100%;
     margin-bottom: 5px;
     text-align: center;
 }
+div.biom_container { 
+    width: 20%;
+    border: 3px solid black;
+}
 div.biom {
+    position: relative;
     background-size: cover;
     background-position: center;
-    border: 3px solid black;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    width: 15%;
-    height: 70%;
+    width: 100%;
+    padding: 50% 0px 50% 0px;
+}
+div.biom p {
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    text-align: center;
     color: red;
 }
 
@@ -255,5 +262,18 @@ div.mob div {
 div.mob p {
     margin: 10px 0px;
     text-align: center;
+    color: white;
+}
+
+
+div#notification {
+    transition: opacity 1s linear;
+    display: none;
+    opacity: 0;
+    background-color: black;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    padding: 5px;
     color: white;
 }

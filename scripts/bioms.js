@@ -2,9 +2,9 @@ window.addEventListener ("load", function () {
     function createBioms () {
         var dom_bioms = document.getElementsByClassName("biom");
         for (var i = 0; i < bioms.length; i++) {
-            if (user.level >= bioms[i].level) {
+            if (curLevel >= bioms[i].level) {
                 dom_bioms[i].style.backgroundImage = "url(" + bioms[i].picture + ")";
-                dom_bioms[i].innerHTML = " ";
+                dom_bioms[i].innerHTML = "";
 
                 dom_bioms[i].onclick = function () {
                     var local_i = i;
@@ -15,7 +15,7 @@ window.addEventListener ("load", function () {
             }
             else {
                 dom_bioms[i].style.backgroundColor = "black";
-                dom_bioms[i].innerHTML = "lvl. " + bioms[i].level;
+                dom_bioms[i].innerHTML = "<p>lvl. " + bioms[i].level + "</p>";
                 dom_bioms[i].onclick = function () {};
             }
         };
@@ -39,7 +39,7 @@ window.addEventListener ("load", function () {
         for (var i = 0; i < bioms[biom_id].mobs.length; i++) {
             var mob = document.createElement("div");
             mob.classList = ["mob"];
-            if (user.level >= bioms[biom_id].mobs[i].level) {
+            if (curLevel >= bioms[biom_id].mobs[i].level) {
                 mob.innerHTML = "<h1>" + bioms[biom_id].mobs[i].name + "</h1>";
                 mob.innerHTML += "<div style=\"background-image: url(" + bioms[biom_id].mobs[i].picture + ");\"></div>";
                 mob.innerHTML += "<p>lvl. " + bioms[biom_id].mobs[i].level + " </p>";
@@ -56,4 +56,21 @@ window.addEventListener ("load", function () {
     };
 
     createBioms();  
+    notify("test");
+
+    function notify (text) {
+        var notification = document.getElementById("notification");
+        notification.innerHTML = text;
+        notification.style.display = "block";
+        setTimeout(function () {
+            notification.style.opacity = "1";
+        }, 100);
+
+        setTimeout(function () {
+            notification.style.opacity = "0";
+            setTimeout(function () {
+                notification.style.display = "none";
+            }, 1100);
+        }, 3000);
+    };
 });
