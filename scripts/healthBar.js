@@ -15,15 +15,16 @@ window.addEventListener ("load", function () {
 	makeList(tempUpgrades, document.getElementById("perhit"), 0);
 	makeList(permanentUpgrades, document.getElementById("persec"), 1);
 	createBioms();  
-	statUpdate(); 
 	changeMob(bioms[0].mobs[1]);
 
 	notify("test");
+	statUpdate(); 
 });
 
 //Обновление статистики
 function statUpdate() {
 	document.getElementById("player_stats").innerHTML = "<p>У вас " + curLevel + " уровень</p>Ваш урон равен " + damage + "</p><p>Количество опыта: " + XP + "</p><p>Количество опыта до следующего уровня: " + xpGoal + "</p><p>Количество монет: " + coin.toFixed(1) + "</p>";
+	document.getElementById("bar").innerHTML = HP + '/' + curMob.HP + '<div id="healthBar"></div>';
 }
 
 

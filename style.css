@@ -92,6 +92,10 @@ div#bar{
     border: solid 2px black;
     width: 70%;
     height: 18px;   
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-wrap: nowrap;
 }
 div#healthBar{
     background-color: #e74c3c;    
