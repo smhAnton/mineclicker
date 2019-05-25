@@ -8,7 +8,8 @@ var HP, fullHP;
 var coin = 90;
 
 window.addEventListener ("load", function () {
-	makeList(permanentUpgrades, document.getElementById("perhit"));
+	makeList(tempUpgrades, document.getElementById("perhit"), 0);
+	makeList(permanentUpgrades, document.getElementById("persec"), 1);
 	statUpdate(); 
 	changeMob();
 });
@@ -25,38 +26,55 @@ function changeMob() {
 	document.getElementById("current_mob_image").style.backgroundImage = 'url("' + curMob.picture +'")';
 }
 
-function makeList(object, parent) {
+function makeList(object, parent, listType) {
 	let n = object.length;
 	for (let i = 0; i < n; i++) {
-		let curObject = document.createElement('div');
-		curObject.className = "upgrade";
+		let typeObject = document.createElement('div');
+   		typeObject.className = "category";
+		parent.appendChild(typeObject);
+		typeObject.innerHTML = '<div class="info">' + object[i].name + '</div>'; 
 
-		let curUpgrade = "";
-		curUpgrade = '<div class="upgrade_photo_container">';
-		curUpgrade += '<div class="upgrade_photo" style="background-image: url(' + '\'' + object[i].icon +  '\'' +')"></div></div>';
-		curUpgrade += '<div class="upgrade_description">';
-		curUpgrade += '<h1>' + object[i].topName + '</h1>';
-		curUpgrade += '<p>Дает ' + object[i].bonus + ' к урону, стоит - ' + object[i].cost + ' золота</p></div>';
-		curObject.innerHTML = curUpgrade;
+		elemCount = object[i].items.length;
 
-		curObject.onclick = function () {
-			let local_i = i, elem = curObject;
-			return function () {
-				if(permanentUpgrades[local_i].cost <= coin && !permanentUpgrades[local_i].status) {
-				coin -= permanentUpgrades[local_i].cost;
-				damage += permanentUpgrades[local_i].bonus;
-				permanentUpgrades[local_i].status = true;
-				curObject.style.backgroundColor = '#009432';
-				statUpdate();
-				} else {
-					console.log('Данный апгрейд приобретен или вам не хватает средств');
-				}
-			};
+		for(let j = 0; j < elemCount; j++) {
+			let curObject = document.createElement('div');
+			curObject.className = "upgrade";
+			let curUpgrade = '<div class="upgrade_photo_container">' + '<div class="upgrade_photo" style="background-image: url(' + '\'' + object[i].items[j].icon +  '\'' + ')"></div></div>' 
+			+ '<div class="upgrade_description">' + '<h1>' + object[i].items[j].topName + '</h1><br>' + '<p>Дает ' + object[i].items[j].bonus + ' к урону, стоит - ' + object[i].items[j].cost + ' золота</p></div>';
+			curObject.innerHTML = curUpgrade;
+			curObject.onclick = function () {
+				let local_i = j, elem = curObject, curText = curUpgrade, itemType = i;
+				return function () {
+					console.log(object[itemType].items[local_i]);
+					if(object[itemType].items[local_i].cost <= coin && !object[itemType].items[local_i].status) {
+						coin -= object[itemType].items[local_i].cost;
+						statUpdate();
+						damage += object[itemType].items[local_i].bonus;
+						if(listType == 0) {
+							object[itemType].items[local_i].status = true;
+							curObject.style.backgroundColor = '#009432';	
+							curText = '<div class="upgrade_photo_container">' + '<div class="upgrade_photo" style="background-image: url(' + '\'' + object[itemType].items[local_i].icon +  '\'' +')"></div></div>'
+								+ '<div class="upgrade_description">' + '<h1>' + object[itemType].items[local_i].topName + '</h1><br>' + '<p>Куплено</p>';
+							curObject.innerHTML = curText;
+							object[itemType].cur++;
+						} else {
+							object[itemType].items[local_i].cost = Math.round(object[itemType].items[local_i].cost * 1.6);
+							curText = '<div class="upgrade_photo_container">' + '<div class="upgrade_photo" style="background-image: url(' + '\'' + object[i].items[j].icon +  '\'' + ')"></div></div>' 
+									+ '<div class="upgrade_description">' + '<h1>' + object[i].items[j].topName + '</h1><br>' + '<p>Дает ' + object[i].items[j].bonus 
+									+ ' к урону, стоит - ' + object[i].items[j].cost + ' золота</p></div>';
+							curObject.innerHTML = curText;
+							object[itemType].cur++;
+						}
+					} else {
+						console.log('Данный апгрейд приобретен или вам не хватает средств');
+					}
+				};
 
-		}();
-		parent.appendChild(curObject);
+			}();
+			parent.appendChild(curObject);
+		}
 	}
-}
+}	
 
 function reduceHP () {
 	HP = Math.max(0, HP - damage);
