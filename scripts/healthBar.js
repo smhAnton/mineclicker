@@ -10,8 +10,11 @@ var coin = 90;
 window.addEventListener ("load", function () {
 	makeList(tempUpgrades, document.getElementById("perhit"), 0);
 	makeList(permanentUpgrades, document.getElementById("persec"), 1);
+	createBioms();  
 	statUpdate(); 
 	changeMob();
+
+	notify("test");
 });
 
 function statUpdate() {
