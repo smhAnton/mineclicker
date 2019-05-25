@@ -9,21 +9,24 @@
                 "picture": "https://i.ya-webdesign.com/images/minecraft-chicken-png-2.png",
                 "level": 1,
                 "HP": 50,
-                "XP": 25
+                "XP": 25,
+                "sound": "sounds/chicken_hurt.ogg"
             },
             {
                 "name": "Свинья",
                 "picture": "https://www.kick.lv/uploads/avatars/1463415193-lohs123123.png",
                 "level": 3,
                 "HP": 100,
-                "XP": 50
+                "XP": 50,
+                "sound": "sounds/pig_hurt.ogg"
             },
             {
                 "name": "Корова",
                 "picture": "http://img00.deviantart.net/0e23/i/2013/310/a/6/minecraft_render___cow_by_danixoldier-d6t90b4.png",
                 "level": 6,
                 "HP": 200,
-                "XP": 75
+                "XP": 75,
+                "sound": "sounds/cow_hurt.ogg"
             },
             {
                 "name": "Железный голем",

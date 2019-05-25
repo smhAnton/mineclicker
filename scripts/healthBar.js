@@ -2,7 +2,7 @@ var damage = 1;
 var bioms;
 var XP = 0;
 var xpGoal = 1000;
-var curLevel = 24;
+var curLevel = 60;
 var curMob;
 var HP, fullHP;
 var coin = 90;
@@ -12,22 +12,22 @@ window.addEventListener ("load", function () {
 	makeList(permanentUpgrades, document.getElementById("persec"), 1);
 	createBioms();  
 	statUpdate(); 
-	changeMob();
+	changeMob(bioms[0].mobs[0]);
 
 	notify("test");
 });
 
 function statUpdate() {
 	document.getElementById("player_stats").innerHTML = "<p>У вас " + curLevel + " уровень</p>Ваш урон равен " + damage + "</p><p>Количество опыта: " + XP + "</p><p>Количество опыта до следующего уровня: " + xpGoal + "</p><p>Количество монет: " + coin + "</p>";
-}
+};
 
-function changeMob() {
-	curMob = bioms[0].mobs[0];
+function changeMob(new_mob) {
+	curMob = new_mob;
 	HP = curMob.HP;
 	let width = (HP / curMob.HP * 100); 
 	document.getElementById("healthBar").style.width = Math.max(width, 0.0) + '%';
 	document.getElementById("current_mob_image").style.backgroundImage = 'url("' + curMob.picture +'")';
-}
+};
 
 function makeList(object, parent, listType) {
 	let n = object.length;

@@ -240,11 +240,11 @@ div#mob_selection_container {
 }
 div#mob_selection {
     box-sizing: border-box;
-    overflow-x: auto;
-    overflow-y: hidden;
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
     background-color: rgb(35, 35, 114);
     border: 7px solid black;
     width: 80%;
@@ -259,9 +259,8 @@ div.mob {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    width: 22%;
+    width: 23%;
     height: 100%;
-    padding-right: 15px;
 }
 div.mob h1 {
     margin: 10px 0px;

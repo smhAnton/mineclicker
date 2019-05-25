@@ -44,6 +44,14 @@ function createMobList (biom_id) {
             mob.innerHTML += "<p>lvl. " + bioms[biom_id].mobs[i].level + " </p>";
             mob.innerHTML += "<p>HP " + bioms[biom_id].mobs[i].HP + " </p>";
             mob.innerHTML += "<p>XP " + bioms[biom_id].mobs[i].XP + "</p>";
+            mob.onclick = function () {
+                var local_mob = bioms[biom_id].mobs[i];
+                return function () {
+                    var el = document.getElementById("mob_selection_container");
+                    el.style.display = "none";
+                    changeMob(local_mob);
+                };
+            }();
         } 
         else {
             mob.innerHTML = "<h1>?</h1>";
