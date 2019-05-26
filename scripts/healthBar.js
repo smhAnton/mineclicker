@@ -2,7 +2,7 @@ var damage = 1;
 var bioms;
 var XP = 0;
 var xpGoal = 1000;
-var curLevel = 60;
+var curLevel = 70;
 var curMob;
 var HP, fullHP;
 var coin = 90;
@@ -26,6 +26,7 @@ function changeMob(new_mob) {
 	HP = curMob.HP;
 	let width = (HP / curMob.HP * 100); 
 	document.getElementById("healthBar").style.width = Math.max(width, 0.0) + '%';
+	document.getElementById("health_bar_number").innerHTML = HP;
 	document.getElementById("current_mob_image").style.backgroundImage = 'url("' + curMob.picture +'")';
 };
 
@@ -84,8 +85,9 @@ function reduceHP () {
 	coin += damage;
 	let width = (HP / curMob.HP * 100); 
 	document.getElementById("healthBar").style.width = Math.max(width, 0.0) + '%';
+	document.getElementById("health_bar_number").innerHTML = HP;
 	console.log("curHP: " + HP + " maxHP: " + curMob.HP);
-	if(HP == 0) {
+	if (HP == 0) {
 		let xpReward = curMob.XP + Math.round(Math.random() * 7) - 3; 
 		console.log("Вы подебил! Ваша награда: " + xpReward + " опыта");
 		XP += xpReward;

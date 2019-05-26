@@ -13,6 +13,10 @@ body {
     -webkit-user-select: none; 
     user-select: none; 
 }
+div {
+    box-sizing: border-box;
+}
+
 
 
 div#main_container {
@@ -24,15 +28,14 @@ div#main_container {
 }
 
 
+
 div#left_container {
-    box-sizing: border-box;
     width: 33%;
     border: 5px solid black;
     height: 100vh;
 }
 
 div#player {
-    box-sizing: border-box;
     width: 100%;
     height: 60%;
     border: 0px solid black;
@@ -48,14 +51,12 @@ div#player_stats {
     
 }
 div#stats {
-    box-sizing: border-box;
     border-top: 5px solid black;
     height: 33%;
     padding: 25px 25px 25px 25px;
     justify-content: space-between;
 }
 div#stat_block {
-    box-sizing: border-box;
     border: 3px solid black;
     display: inline-block;
     width: 27%;
@@ -64,8 +65,8 @@ div#stat_block {
 }
 
 
+
 div#center_container {
-    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -75,48 +76,49 @@ div#center_container {
     height: 100vh;
 }
 
+
 div#current_mob {
     text-align: center;
+    width: 70%;
 }
 div#mob_health_bar {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
     height: 80px;
+    width: 100%;
 }
 div#bar{
+    position: relative;
     border: solid 2px black;
-    width: 70%;
-    height: 18px;   
+    width: 50%;
+    height: 25px; 
 }
 div#healthBar{
     background-color: #e74c3c;    
     width: 100%;
     height: 100%;
 }
+p#health_bar_number {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 div#current_mob_image {
     display: inline-block;
-    background-image: url("https://static.turbosquid.com/Preview/2016/03/14__23_58_21/MinecraftCreeper02.jpg2a29f0cd-04de-4935-998b-8fe7735414efOriginal.jpg");
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
-    width: 300px;
-    height: 350px;
-}
-div#fight_button p {
-    display: inline-block;
-    background-color: red;
-    border: 1px solid black;
-    border-radius: 10px;
-    padding: 15px;
-    margin: 10px 0px; 
-    font-size: 150%;
+    width: 70%;
+    height: 50vh;
 }
 
+
 div#location {
-    box-sizing: border-box;
     background-image: url("http://4.bp.blogspot.com/-sac2Slfk3Pc/T6AuMCIWdoI/AAAAAAAABOU/6IlxXPQ0vlg/s1600/minecraft_cobble.jpg");
     background-size: cover;
     display: inline-flex;
@@ -153,8 +155,8 @@ div.biom p {
 }
 
 
+
 div#upgrades_container {
-    box-sizing: border-box;
     background-image: url('img/block/stone_bricks.png');
     display: flex;
     flex-direction: column;
@@ -174,7 +176,6 @@ div.upgrades_list {
     height: 45%;
 }
 div.category {
-    box-sizing: border-box;
     background-color: #C6C6C6;
     border-top: 0.2vw solid white;
     border-right: 0.2vw solid black;
@@ -188,7 +189,6 @@ div.info {
     color: black;
 }
 div.upgrade {
-    box-sizing: border-box;
     background-color: #212121;
     border: 2px solid #555651;
     display: flex;
@@ -239,7 +239,6 @@ div#mob_selection_container {
     height: 100vh;
 }
 div#mob_selection {
-    box-sizing: border-box;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -253,7 +252,6 @@ div#mob_selection {
 }
 
 div.mob {
-    box-sizing: border-box;
     display: inline-flex;
     flex-direction: row;
     flex-wrap: wrap;
