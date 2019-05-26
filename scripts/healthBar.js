@@ -9,6 +9,7 @@ var curMob; // Текущий моб
 var HP, fullHP; // Текущее/ максимальное количество жизней
 var coin = 0; // Количество монет
 var moneyPerSec = 0; // Количество монет в секунду
+var killStreak = 0;
 
 //Начальная загрузка 
 window.addEventListener ("load", function () {
@@ -23,8 +24,8 @@ window.addEventListener ("load", function () {
 
 //Обновление статистики
 function statUpdate() {
-	let curStat = '<div class="stat_block">У вас ' + curLevel + ' уровень</div><div class="stat_block">Ваш урон равен' + damage + '</div><div class="stat_block">Количество опыта: ' + XP + '</div><div class="stat_block">Опыта необходимо для следующего уровня: ' +
-					xpGoal + '</div><div class="stat_block">Ваши сбережения: ' + coin.toFixed(1) + 'g</div><div class="stat_block">Количество монет в секунду: ' + moneyPerSec.toFixed(1) + 'g</div>	'; 
+	let curStat = '<div class="stat_block">У вас ' + curLevel + ' уровень</div><div class="stat_block">Ваш урон равен' + damage + '</div><div class="stat_block">Количество опыта: ' + XP + '</div><div class="stat_block">Убито монстров: ' +
+					killStreak + '</div><div class="stat_block">Ваши сбережения: ' + coin.toFixed(1) + 'g</div><div class="stat_block">Количество монет в секунду: ' + moneyPerSec.toFixed(1) + 'g</div>	'; 
 	document.getElementById("stats").innerHTML = curStat;
 }
 
@@ -77,6 +78,7 @@ function makeList(object, parent, listType) {
 							curText = '<div class="upgrade_photo_container">' + '<div class="upgrade_photo" style="background-image: url(\'img/upgrades/done.png\'' +')"></div></div>'
 								+ '<div class="upgrade_description">' + '<h1>' + object[itemType].items[local_i].topName + '</h1><br>' + '<p>Куплено</p>';
 							curObject.innerHTML = curText;
+							curObject.style.backgroundColor = '#009432';
 							object[itemType].cur++;
 							damage += object[itemType].items[local_i].bonus;
 						} else {
@@ -113,6 +115,7 @@ function reduceHP () {
 	document.getElementById("health_bar_number").innerHTML = HP;
 	console.log("curHP: " + HP + " maxHP: " + curMob.HP);
 	if (HP == 0) {
+		killStreak++;
 		let xpReward = curMob.XP + Math.round(Math.random() * 7) - 3; 
 		console.log("Вы подебил! Ваша награда: " + xpReward + " опыта");
 		XP += xpReward;
