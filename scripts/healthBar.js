@@ -10,13 +10,14 @@ var HP, fullHP; // Текущее/ максимальное количество
 var coin = 0; // Количество монет
 var moneyPerSec = 0; // Количество монет в секунду
 var killStreak = 0;
+var curId = 0; 
 
 //Начальная загрузка 
 window.addEventListener ("load", function () {
 	makeList(tempUpgrades, document.getElementById("perhit"), 0);
 	makeList(permanentUpgrades, document.getElementById("persec"), 1);
 	createBioms();  
-	changeMob(bioms[0].mobs[0]);
+	changeMob(bioms[0].mobs[0], 0);
 	xpBar();
 	notify("test");
 	statUpdate(); 
@@ -27,11 +28,14 @@ function statUpdate() {
 	let curStat = '<div class="stat_block">У вас ' + curLevel + ' уровень</div><div class="stat_block">Ваш урон равен' + damage + '</div><div class="stat_block">Количество опыта: ' + XP + '</div><div class="stat_block">Убито монстров: ' +
 					killStreak + '</div><div class="stat_block">Ваши сбережения: ' + coin.toFixed(1) + 'g</div><div class="stat_block">Количество монет в секунду: ' + moneyPerSec.toFixed(1) + 'g</div>	'; 
 	document.getElementById("stats").innerHTML = curStat;
+	createBioms();  
 }
 
 
 //Смена моба
-function changeMob(newMob) {
+function changeMob(newMob, worldId) {
+	curId = worldId;
+	document.body.style.backgroundImage = 'url("' + bioms[worldId].picture + '")';
 	curMob = newMob;
 	HP = curMob.HP;
 	let width = (HP / curMob.HP * 100); 
@@ -124,7 +128,7 @@ function reduceHP () {
 			XP -= xpGoal;
 			xpGoal = Math.round(xpGoal * xpCoef);
 		}
-		changeMob(curMob);
+		changeMob(curMob, curId);
 		xpBar();
 	}
   	statUpdate();
@@ -136,5 +140,5 @@ setInterval(function() {coin = round(coin +  moneyPerSec / 10, 1); statUpdate();
 //Обработка опыта
 function xpBar() {
 	let xpBarElement = document.getElementById("player_level_1");
-	
+
 }

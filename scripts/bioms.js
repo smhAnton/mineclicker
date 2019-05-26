@@ -49,7 +49,7 @@ function createMobList (biom_id) {
                 return function () {
                     var el = document.getElementById("mob_selection_container");
                     el.style.display = "none";
-                    changeMob(local_mob);
+                    changeMob(local_mob, biom_id);
                 };
             }();
         } 

@@ -4,6 +4,8 @@
 }
 body {
     font-family: "Minefont", 'Courier New', Courier, monospace;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 * {
     margin: 0px;
@@ -40,6 +42,7 @@ div#left_container {
     height: 100vh;
 }
 div#player {
+    background-image: url('img/block/plank.png');
     width: 100%;
     height: 67%;
     border: 0px solid black;
@@ -64,7 +67,7 @@ div#player_level_1 {
     width: 100%;
     height: 100%;
 }
-div#player_level_2 {    
+div#player_level_2 {
     background-image: url('img/block/fullxpBar.png');
     background-repeat: no-repeat;
     background-size: contain;
