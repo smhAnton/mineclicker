@@ -15,7 +15,7 @@ window.addEventListener ("load", function () {
 	makeList(tempUpgrades, document.getElementById("perhit"), 0);
 	makeList(permanentUpgrades, document.getElementById("persec"), 1);
 	createBioms();  
-	changeMob(bioms[0].mobs[1]);
+	changeMob(bioms[0].mobs[0]);
 
 	notify("test");
 	statUpdate(); 
@@ -23,7 +23,9 @@ window.addEventListener ("load", function () {
 
 //Обновление статистики
 function statUpdate() {
-	document.getElementById("player_stats").innerHTML = "<p>У вас " + curLevel + " уровень</p>Ваш урон равен " + damage + "</p><p>Количество опыта: " + XP + "</p><p>Количество опыта до следующего уровня: " + xpGoal + "</p><p>Количество монет: " + coin.toFixed(1) + "</p>";
+	let curStat = '<div class="stat_block">У вас ' + curLevel + ' уровень</div><div class="stat_block">Ваш урон равен' + damage + '</div><div class="stat_block">Количество опыта: ' + XP + '</div><div class="stat_block">Опыта необходимо для следующего уровня: ' +
+					xpGoal + '</div><div class="stat_block">Ваши сбережения: ' + coin.toFixed(1) + 'g</div><div class="stat_block">Количество монет в секунду: ' + moneyPerSec.toFixed(1) + 'g</div>	'; 
+	document.getElementById("stats").innerHTML = curStat;
 }
 
 
@@ -53,7 +55,12 @@ function makeList(object, parent, listType) {
 			let curObject = document.createElement('div');
 			curObject.className = "upgrade";
 			let curUpgrade = '<div class="upgrade_photo_container">' + '<div class="upgrade_photo" style="background-image: url(' + '\'' + object[i].items[j].icon +  '\'' + ')"></div></div>' 
-			+ '<div class="upgrade_description">' + '<h1>' + object[i].items[j].topName + '</h1><br>' + '<p>Дает ' + object[i].items[j].bonus + ' к урону, стоит - ' + object[i].items[j].cost + ' золота</p></div>';
+			+ '<div class="upgrade_description">' + '<h1>' + object[i].items[j].topName + '</h1><br>' + '<p>Дает ' + object[i].items[j].bonus + ' к урону за клик. Стоимость: ' + object[i].items[j].cost + 'g</p></div>';
+			if(listType == 1) {
+				curUpgrade = '<div class="upgrade_photo_container">' + '<div class="upgrade_photo" style="background-image: url(' + '\'' + object[i].items[j].icon +  '\'' + ')"></div></div>' 
+							+ '<div class="upgrade_description">' + '<h1>' + object[i].items[j].topName + '</h1><br>' + '<p>Дает ' + object[i].items[j].bonus + 'g в секунду. Стоимость: ' 
+							+ object[i].items[j].cost + 'g</p></div>';
+			}
 			curObject.innerHTML = curUpgrade;
 
 
@@ -75,8 +82,8 @@ function makeList(object, parent, listType) {
 						} else {
 							object[itemType].items[local_i].cost = Math.round(object[itemType].items[local_i].cost * valCoef);
 							curText = '<div class="upgrade_photo_container">' + '<div class="upgrade_photo" style="background-image: url(' + '\'' + object[i].items[j].icon +  '\'' + ')"></div></div>' 
-									+ '<div class="upgrade_description">' + '<h1>' + object[i].items[j].topName + '</h1><br>' + '<p>Дает ' + object[i].items[j].bonus 
-									+ ' к урону, стоит - ' + object[i].items[j].cost + ' золота</p></div>';
+									+ '<div class="upgrade_description">' + '<h1>' + object[i].items[j].topName + '</h1><br>' + '<p>Дает ' + object[i].items[j].bonus + 'g в секунду. Стоимость: ' 
+									+ object[i].items[j].cost + 'g</p></div>';
 							curObject.innerHTML = curText;
 							object[itemType].cur++;
 							moneyPerSec += object[itemType].items[local_i].bonus;
@@ -114,7 +121,7 @@ function reduceHP () {
 			XP -= xpGoal;
 			xpGoal = Math.round(xpGoal * xpCoef);
 		}
-		changeMob(bioms[0].mobs[1]);
+		changeMob(curMob);
 	}
   	statUpdate();
 };

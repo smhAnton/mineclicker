@@ -65,7 +65,7 @@ div#stats {
     height: 33%;
     background-image: url('img/block/oak.png');
 }
-div#stat_block {
+div.stat_block {
     background-image: url("img/block/bukkitsign.png");
     border: 3px solid black;
     width: 30%;

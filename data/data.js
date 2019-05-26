@@ -412,7 +412,7 @@ tempUpgrades =
 permanentUpgrades =
 [
     {
-        "name": "Многорозавые улучшения",
+        "name": "Пассивный заработок",
         "cur": 0,
         "items":
         [
