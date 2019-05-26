@@ -4,7 +4,7 @@ var XP = 0; // Опыт
 var xpGoal = 1000; //Нужно для достижения 1 уровня
 var xpCoef = 1.3 // Множитель увеличения количества опыта нужного для повышения уровня
 var valCoef = 1.6 // Множитель увеличения цены апгрейдов
-var curLevel = 60; // Текущий уровень
+var curLevel = 1; // Текущий уровень
 var curMob; // Текущий моб
 var HP, fullHP; // Текущее/ максимальное количество жизней
 var coin = 0; // Количество монет
@@ -25,8 +25,8 @@ window.addEventListener ("load", function () {
 
 //Обновление статистики
 function statUpdate() {
-	let curStat = '<div class="stat_block">У вас ' + curLevel + ' уровень</div><div class="stat_block">Ваш урон равен' + damage + '</div><div class="stat_block">Количество опыта: ' + XP + '</div><div class="stat_block">Убито монстров: ' +
-					killStreak + '</div><div class="stat_block">Ваши сбережения: ' + coin.toFixed(1) + 'g</div><div class="stat_block">Количество монет в секунду: ' + moneyPerSec.toFixed(1) + 'g</div>	'; 
+	let curStat = '<div class="stat_block">У вас <br>' + curLevel + '<br>уровень</div><div class="stat_block">Ваш урон равен<br>' + damage + '</div><div class="stat_block">Количество опыта:<br>' + XP + '</div><div class="stat_block">Убито монстров:<br>' +
+					killStreak + '</div><div class="stat_block">Ваши сбережения:<br>' + coin.toFixed(1) + 'g</div><div class="stat_block">Количество монет в секунду:<br>' + moneyPerSec.toFixed(1) + 'g</div>	'; 
 	document.getElementById("stats").innerHTML = curStat;
 	createBioms();  
 }
