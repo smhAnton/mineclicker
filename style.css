@@ -63,9 +63,10 @@ div#stats {
     border-top: 5px solid black;
     width: 100%;
     height: 33%;
+    background-image: url('img/block/oak.png');
 }
 div#stat_block {
-    background-image: url("https://gamepedia.cursecdn.com/minecraft_gamepedia/7/78/Blank_Sign.png?version=19b8eb26f7f436f701998ccc6a2be3e1");
+    background-image: url("img/block/bukkitsign.png");
     border: 3px solid black;
     width: 30%;
     height: 40%;

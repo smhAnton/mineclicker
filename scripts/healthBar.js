@@ -1,28 +1,35 @@
-var damage = 1;
-var bioms;
-var XP = 0;
-var xpGoal = 1000;
-var curLevel = 70;
-var curMob;
-var HP, fullHP;
-var coin = 90;
+var damage = 1; // Урон игрока
+var bioms; // Объект, содержащий все биомы и монстров
+var XP = 0; // Опыт
+var xpGoal = 1000; //Нужно для достижения 1 уровня
+var xpCoef = 1.3 // Множитель увеличения количества опыта нужного для повышения уровня
+var valCoef = 1.6 // Множитель увеличения цены апгрейдов
+var curLevel = 1; // Текущий уровень
+var curMob; // Текущий моб
+var HP, fullHP; // Текущее/ максимальное количество жизней
+var coin = 0; // Количество монет
+var moneyPerSec = 0; // Количество монет в секунду
 
+//Начальная загрузка 
 window.addEventListener ("load", function () {
 	makeList(tempUpgrades, document.getElementById("perhit"), 0);
 	makeList(permanentUpgrades, document.getElementById("persec"), 1);
 	createBioms();  
-	statUpdate(); 
-	changeMob(bioms[0].mobs[0]);
+	changeMob(bioms[0].mobs[1]);
 
 	notify("test");
+	statUpdate(); 
 });
 
+//Обновление статистики
 function statUpdate() {
-	document.getElementById("player_stats").innerHTML = "<p>У вас " + curLevel + " уровень</p>Ваш урон равен " + damage + "</p><p>Количество опыта: " + XP + "</p><p>Количество опыта до следующего уровня: " + xpGoal + "</p><p>Количество монет: " + coin + "</p>";
-};
+	document.getElementById("player_stats").innerHTML = "<p>У вас " + curLevel + " уровень</p>Ваш урон равен " + damage + "</p><p>Количество опыта: " + XP + "</p><p>Количество опыта до следующего уровня: " + xpGoal + "</p><p>Количество монет: " + coin.toFixed(1) + "</p>";
+}
 
-function changeMob(new_mob) {
-	curMob = new_mob;
+
+//Смена моба
+function changeMob(newMob) {
+	curMob = newMob;
 	HP = curMob.HP;
 	let width = (HP / curMob.HP * 100); 
 	document.getElementById("healthBar").style.width = Math.max(width, 0.0) + '%';
@@ -30,6 +37,8 @@ function changeMob(new_mob) {
 	document.getElementById("current_mob_image").style.backgroundImage = 'url("' + curMob.picture +'")';
 };
 
+
+//Составление списка апгрейдов
 function makeList(object, parent, listType) {
 	let n = object.length;
 	for (let i = 0; i < n; i++) {
@@ -46,29 +55,33 @@ function makeList(object, parent, listType) {
 			let curUpgrade = '<div class="upgrade_photo_container">' + '<div class="upgrade_photo" style="background-image: url(' + '\'' + object[i].items[j].icon +  '\'' + ')"></div></div>' 
 			+ '<div class="upgrade_description">' + '<h1>' + object[i].items[j].topName + '</h1><br>' + '<p>Дает ' + object[i].items[j].bonus + ' к урону, стоит - ' + object[i].items[j].cost + ' золота</p></div>';
 			curObject.innerHTML = curUpgrade;
+
+
+			//Клик по объекту в магазине 
 			curObject.onclick = function () {
 				let local_i = j, elem = curObject, curText = curUpgrade, itemType = i;
 				return function () {
 					console.log(object[itemType].items[local_i]);
 					if(object[itemType].items[local_i].cost <= coin && !object[itemType].items[local_i].status) {
 						coin -= object[itemType].items[local_i].cost;
-						statUpdate();
-						damage += object[itemType].items[local_i].bonus;
+						//0 - Список единовременных, 1 - бесконечных
 						if(listType == 0) {
-							object[itemType].items[local_i].status = true;
-							curObject.style.backgroundColor = '#009432';	
-							curText = '<div class="upgrade_photo_container">' + '<div class="upgrade_photo" style="background-image: url(' + '\'' + object[itemType].items[local_i].icon +  '\'' +')"></div></div>'
+							object[itemType].items[local_i].status = true;	
+							curText = '<div class="upgrade_photo_container">' + '<div class="upgrade_photo" style="background-image: url(\'img/upgrades/done.png\'' +')"></div></div>'
 								+ '<div class="upgrade_description">' + '<h1>' + object[itemType].items[local_i].topName + '</h1><br>' + '<p>Куплено</p>';
 							curObject.innerHTML = curText;
 							object[itemType].cur++;
+							damage += object[itemType].items[local_i].bonus;
 						} else {
-							object[itemType].items[local_i].cost = Math.round(object[itemType].items[local_i].cost * 1.6);
+							object[itemType].items[local_i].cost = Math.round(object[itemType].items[local_i].cost * valCoef);
 							curText = '<div class="upgrade_photo_container">' + '<div class="upgrade_photo" style="background-image: url(' + '\'' + object[i].items[j].icon +  '\'' + ')"></div></div>' 
 									+ '<div class="upgrade_description">' + '<h1>' + object[i].items[j].topName + '</h1><br>' + '<p>Дает ' + object[i].items[j].bonus 
 									+ ' к урону, стоит - ' + object[i].items[j].cost + ' золота</p></div>';
 							curObject.innerHTML = curText;
 							object[itemType].cur++;
+							moneyPerSec += object[itemType].items[local_i].bonus;
 						}
+						statUpdate();
 					} else {
 						console.log('Данный апгрейд приобретен или вам не хватает средств');
 					}
@@ -80,6 +93,11 @@ function makeList(object, parent, listType) {
 	}
 }	
 
+function round(value, decimals) {
+    return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
+}
+
+//Обработка клика
 function reduceHP () {
 	HP = Math.max(0, HP - damage);
 	coin += damage;
@@ -94,17 +112,12 @@ function reduceHP () {
 		if(XP >= xpGoal) {
 			curLevel++;
 			XP -= xpGoal;
-			xpGoal = Math.round(xpGoal * 1.1);
+			xpGoal = Math.round(xpGoal * xpCoef);
 		}
-		changeMob();
+		changeMob(bioms[0].mobs[1]);
 	}
   	statUpdate();
 };
 
-function resetHP(){
-	document.getElementById("healthBar").style.width = '100%';
-	HP = document.getElementById("HP").value;
-	damage = document.getElementById("damage").value;
-	fullHP = HP;
-};
-
+//Обработка ежесекундного прироста
+setInterval(function() {coin = round(coin +  moneyPerSec / 10, 1); statUpdate();}, 100);   
