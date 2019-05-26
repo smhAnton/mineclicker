@@ -45,6 +45,8 @@ div#player {
     border: 0px solid black;
     text-align: center;
 }
+
+
 div#player_level {
     display: flex;
     flex-direction: row;
@@ -52,7 +54,26 @@ div#player_level {
     justify-content: center;
     align-items: center;
     height: 15%;
+    padding: 20px 20px 20px 20px;
+
 }
+div#player_level_1 {
+    background-image: url('img/block/emptyxpBar.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+}
+div#player_level_2 {    
+    background-image: url('img/block/fullxpBar.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+}
+
+
+
 div#player_image {
     background-image: url("img/steve.png");
     background-size: contain;
@@ -190,7 +211,6 @@ div#upgrades_container {
     padding: 10px;
     width: 30%;
     height: 100vh;
-    
 }
 div.upgrades_list {
     overflow: auto;

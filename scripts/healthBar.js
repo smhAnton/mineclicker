@@ -17,7 +17,7 @@ window.addEventListener ("load", function () {
 	makeList(permanentUpgrades, document.getElementById("persec"), 1);
 	createBioms();  
 	changeMob(bioms[0].mobs[0]);
-
+	xpBar();
 	notify("test");
 	statUpdate(); 
 });
@@ -125,9 +125,16 @@ function reduceHP () {
 			xpGoal = Math.round(xpGoal * xpCoef);
 		}
 		changeMob(curMob);
+		xpBar();
 	}
   	statUpdate();
 };
 
 //Обработка ежесекундного прироста
 setInterval(function() {coin = round(coin +  moneyPerSec / 10, 1); statUpdate();}, 100);   
+
+//Обработка опыта
+function xpBar() {
+	let xpBarElement = document.getElementById("player_level_1");
+	
+}
