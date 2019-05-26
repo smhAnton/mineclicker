@@ -41,20 +41,30 @@ div#left_container {
 }
 div#player {
     width: 100%;
-    height: 60%;
+    height: 67%;
     border: 0px solid black;
+    text-align: center;
+}
+div#player_level {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 15%;
 }
 div#player_image {
     background-image: url("img/steve.png");
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    width: 95%;
-    height: 500px;
+    width: 100%;
+    height: 80%;
 }
-div#player_stats {
-    
-}
+
+
 div#stats {
+    background-image: url('img/block/oak.png');
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -63,9 +73,14 @@ div#stats {
     border-top: 5px solid black;
     width: 100%;
     height: 33%;
-    background-image: url('img/block/oak.png');
 }
 div.stat_block {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     background-image: url("img/block/bukkitsign.png");
     border: 3px solid black;
     width: 30%;
