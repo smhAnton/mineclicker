@@ -297,9 +297,15 @@ div#mob_selection {
     width: 80%;
     height: 70%;
     padding: 15px;
+    background-color: #C6C6C6;
+    border-top: 0.4vw solid white;
+    border-right: 0.4vw solid black;
+    border-bottom: 0.4vw solid black;
+    border-left: 0.4vw solid white;
 }
 
 div.mob {
+    
     display: inline-flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -315,7 +321,7 @@ div.mob h1 {
     height: 15%;
     margin: 0px 0px 10px 0px;
     text-align: center;
-    color: white;
+    color: black;
 }
 div.mob div {
     background-size: 100% 100%;
@@ -332,7 +338,7 @@ div.mob p {
     align-items: center;
     height: 15%;
     text-align: center;
-    color: white;
+    color: black;
 }
 
 
