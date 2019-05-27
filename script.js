@@ -1,4 +1,5 @@
 var isAnimationGoing = 0; // Идет ли сейчас анимация
+var isAudioPlaying = false; // играет ли сейчас аудио
 var damage = 1; // Урон игрока
 var bioms; // Объект, содержащий все биомы и монстров
 var XP = 0; // Опыт
@@ -7,11 +8,13 @@ var xpCoef = 1.3 // Множитель увеличения количества
 var valCoef = 1.6 // Множитель увеличения цены апгрейдов
 var curLevel = 1; // Текущий уровень
 var curMob; // Текущий моб
-var HP, fullHP; // Текущее/ максимальное количество жизней
+var mob_sound;  //массив звуков моба
+var HP, fullHP; // Текущее/ максимальное количество жизней моба
 var coin = 0; // Количество монет
 var moneyPerSec = 0; // Количество монет в секунду
 var killStreak = 0; // Количество убитых монстров
 var curId = 0; 
+var notification_list = [], notification_displaying; //массив с уведомлениями и показывается ли уведомление сейчас
 
 //Начальная загрузка 
 window.addEventListener ("load", function () {
@@ -20,9 +23,14 @@ window.addEventListener ("load", function () {
 	createBioms();  
 	changeMob(bioms[0].mobs[0], 0);
 	xpBar();
-	notify("test");
 	statUpdate();
-	setTimeout(function(){document.getElementById("toRemove").innerHTML = '';}, 3900);
+	setTimeout(function(){
+		document.getElementById("toRemove").style.opacity = "0";
+		setTimeout (function () {
+			document.getElementById("toRemove").style.display = 'none';
+			notify("Добро пожаловать в Майнкрафт кликер!");
+		}, 1100);
+	}, 100); //3900
 });
 
 //Обновление статистики
@@ -30,7 +38,6 @@ function statUpdate() {
 	let curStat = '<div class="stat_block">У вас <br>' + curLevel + '<br>уровень</div><div class="stat_block">Ваш урон равен<br>' + damage + '</div><div class="stat_block">Количество опыта:<br>' + XP + '</div><div class="stat_block">Убито монстров:<br>' +
 					killStreak + '</div><div class="stat_block">Ваши сбережения:<br>' + coin.toFixed(1) + 'g</div><div class="stat_block">Количество монет в секунду:<br>' + moneyPerSec.toFixed(1) + 'g</div>	'; 
 	document.getElementById("stats").innerHTML = curStat;
-	createBioms();  
 }
 
 
@@ -40,11 +47,22 @@ function changeMob(newMob, worldId) {
 	document.body.style.backgroundImage = 'url("' + bioms[worldId].picture + '")';
 	curMob = newMob;
 	HP = curMob.HP;
+
 	let width = (HP / curMob.HP * 100); 
 	document.getElementById("healthBar").style.width = Math.max(width, 0.0) + '%';
 	document.getElementById("health_bar_number").innerHTML = HP;
 	document.getElementById("current_mob_image").style.backgroundImage = 'url("' + curMob.picture +'")';
 	document.getElementById("mob_image_mask").style.mask = 'url("' + curMob.picture +'")';
+
+	mob_sound = [];
+	if (curMob.sounds != undefined) {
+		if (curMob.sounds.length != undefined) {
+			for (var i = 0; i < curMob.sounds.length; i++) {
+				mob_sound.push(new Audio(curMob.sounds[i]));
+			}
+		}
+	}
+	//обновляю аудиофайлы моба
 };
 
 
@@ -106,7 +124,7 @@ function makeList(object, parent, listType) {
 						}
 						statUpdate();
 					} else {
-						console.log('Данный апгрейд приобретен или вам не хватает средств');
+						notify('Данный апгрейд приобретен или вам не хватает средств');
 					}
 				};
 
@@ -114,11 +132,11 @@ function makeList(object, parent, listType) {
 			parent.appendChild(curObject);
 		}
 	}
-}	
+};
 
 function round(value, decimals) {
     return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
-}
+};
 
 //Обработка клика
 function reduceHP () {
@@ -127,7 +145,9 @@ function reduceHP () {
 	let width = (HP / curMob.HP * 100); 
 	document.getElementById("healthBar").style.width = Math.max(width, 0.0) + '%';
 	document.getElementById("health_bar_number").innerHTML = HP;
-	console.log("curHP: " + HP + " maxHP: " + curMob.HP);
+	//console.log("curHP: " + HP + " maxHP: " + curMob.HP);
+	PlayMobHurt(); //проигрываю аудио удара
+
 	if (!isAnimationGoing) {
 		document.getElementById("current_mob_image").style.animationName = "mob_punch";
 		isAnimationGoing = 1;
@@ -136,10 +156,12 @@ function reduceHP () {
 	if (HP == 0) {
 		killStreak++;
 		let xpReward = curMob.XP + Math.round(Math.random() * 7) - 3; 
-		console.log("Вы подебил! Ваша награда: " + xpReward + " опыта");
+		notify("Вы подебили! Ваша награда: " + xpReward + " опыта");
 		XP += xpReward;
 		if(XP >= xpGoal) {
 			curLevel++;
+			notify("У вас новый уровень!");
+			createBioms();
 			XP -= xpGoal;
 			xpGoal = Math.round(xpGoal * xpCoef);
 		}
@@ -150,7 +172,7 @@ function reduceHP () {
 };
 
 //Запрет правой кнопки
-document.oncontextmenu = cmenu; 
+//document.oncontextmenu = cmenu; //не забыть вернуть на место
 function cmenu() { 
 	return false; 
 }
@@ -161,5 +183,120 @@ setInterval(function() {coin = round(coin +  moneyPerSec / 10, 1); statUpdate();
 //Обработка опыта
 function xpBar() {
 	let xpBarElement = document.getElementById("player_level_1");
-
 }
+
+//проигрывает звук урона моба
+function PlayMobHurt () {
+	if (isAudioPlaying) return;
+	if (mob_sound.length == 0) return;
+
+	isAudioPlaying = true;
+	setInterval (function () {
+		isAudioPlaying = false;
+	}, 1500);
+
+	var mob_sound_index = Math.floor(Math.random()*100) % mob_sound.length;
+	mob_sound[mob_sound_index].play();
+};
+
+//создаёт биомы
+function createBioms () {
+    var dom_bioms = document.getElementsByClassName("biom");
+    for (var i = 0; i < bioms.length; i++) {
+        if (curLevel >= bioms[i].level) {
+            dom_bioms[i].style.backgroundImage = "url(" + bioms[i].picture + ")";
+            dom_bioms[i].innerHTML = "";
+
+            dom_bioms[i].onclick = function () {
+                var local_i = i;
+                return function () {
+                    createMobList(local_i);
+                };
+            }();
+        }
+        else {
+            dom_bioms[i].style.backgroundColor = "black";
+            dom_bioms[i].innerHTML = "<p>lvl. " + bioms[i].level + "</p>";
+            dom_bioms[i].onclick = function () {};
+        }
+    };
+};
+
+//создаёт мобов в меню выбора
+function createMobList (biom_id) {
+    var mobs_list = document.getElementById("mob_selection_container");
+    mobs_list.style.display = "flex";
+    mobs_list.onclick = function (obj) {
+        var local_el = mobs_list;
+        return function (obj) {
+            if (obj.path[0] == local_el) {
+                local_el.style.display = "none";
+            }
+        };
+    }();
+
+    mobs_list = document.getElementById("mob_selection");
+    mobs_list.innerHTML = "";
+
+    for (var i = 0; i < bioms[biom_id].mobs.length; i++) {
+        var mob = document.createElement("div");
+        mob.classList = ["mob"];
+        if (curLevel >= bioms[biom_id].mobs[i].level) {
+            mob.innerHTML = "<h1>" + bioms[biom_id].mobs[i].name + "</h1>";
+            mob.innerHTML += "<div style=\"background-image: url(" + bioms[biom_id].mobs[i].picture + ");\"></div>";
+            mob.innerHTML += "<p>lvl. " + bioms[biom_id].mobs[i].level + " </p>";
+            mob.innerHTML += "<p>HP " + bioms[biom_id].mobs[i].HP + " </p>";
+            mob.innerHTML += "<p>XP " + bioms[biom_id].mobs[i].XP + "</p>";
+            mob.onclick = function () {
+                var local_mob = bioms[biom_id].mobs[i];
+                return function () {
+                    var el = document.getElementById("mob_selection_container");
+                    el.style.display = "none";
+                    changeMob(local_mob, biom_id);
+                };
+            }();
+        } 
+        else {
+            mob.innerHTML = "<h1>?</h1>";
+            mob.innerHTML += "<div style=\"background-color: black;\"></div>";
+            mob.innerHTML += "<p>???</p>";
+        }
+        mobs_list.appendChild(mob);
+    }
+};
+
+//уведомления
+function notify (text) {
+    if (arguments.length > 0) {
+        if (notification_list.indexOf(arguments[0]) == -1 && notification_list.length < 5) {
+            notification_list.push(arguments[0]);
+            console.log("pushed " + arguments[0], notification_list);
+            setTimeout (function () {
+                notify();
+            }, 100);
+        }
+        return;
+    }
+
+    if (notification_displaying == true) return;
+    if (notification_list.length == 0) return;
+
+    var notification = document.getElementById("notification");
+    notification.innerHTML = notification_list[0];
+    notification.style.display = "block";
+    notification_displaying = true;
+
+    setTimeout(function () {
+        notification.style.opacity = "1";
+    }, 100);
+
+    setTimeout(function () {
+        notification.style.opacity = "0";
+        setTimeout(function () {
+            notification.style.display = "none";
+            notification_list.splice(0, 1);
+            notification_displaying = false;
+            notify();
+        }, 1100);
+    }, 2000);
+};

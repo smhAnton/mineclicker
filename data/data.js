@@ -10,7 +10,7 @@
                 "level": 1,
                 "HP": 50,
                 "XP": 25,
-                "sounds": "sounds/chicken_hurt.ogg"
+                "sounds": ["sounds/chicken_hurt_1.ogg", "sounds/chicken_hurt_2.ogg"]
             },
             {
                 "name": "Свинья",
@@ -18,7 +18,7 @@
                 "level": 3,
                 "HP": 100,
                 "XP": 50,
-                "sounds": "sounds/pig_hurt.ogg"
+                "sounds": ["sounds/pig_hurt.ogg"]
             },
             {
                 "name": "Корова",
@@ -26,7 +26,7 @@
                 "level": 6,
                 "HP": 200,
                 "XP": 75,
-                "sounds": "sounds/cow_hurt.ogg"
+                "sounds": ["sounds/cow_hurt.ogg"]
             },
             {
                 "name": "Железный голем",
