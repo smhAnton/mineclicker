@@ -4,7 +4,7 @@
 }
 body {
     font-family: "Minefont", 'Courier New', Courier, monospace;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
 }
 * {
@@ -156,6 +156,21 @@ p#health_bar_number {
     transform: translate(-50%, -50%);
 }
 
+mask#mob_image_mask {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 0, 0, 100);
+}
+
+@keyframes didlidu {
+    0% {transform: rotate(0);}
+    30% {transform: rotate(15deg);}
+    35% {transform: rotate(15deg);}
+    75% {transform: rotate(-15deg);}
+    80% {transform: rotate(-15deg);}
+    100% {transform: rotate(0deg);}
+}
+
 div#current_mob_image {
     display: inline-block;
     background-size: contain;
@@ -163,6 +178,7 @@ div#current_mob_image {
     background-position: center;
     width: 100%;
     height: 80%;
+    animation-duration: 0.3s;
 }
 
 

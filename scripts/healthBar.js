@@ -1,3 +1,4 @@
+var isAnimationGoing = 0; // Идет ли сейчас анимация
 var damage = 1; // Урон игрока
 var bioms; // Объект, содержащий все биомы и монстров
 var XP = 0; // Опыт
@@ -9,7 +10,7 @@ var curMob; // Текущий моб
 var HP, fullHP; // Текущее/ максимальное количество жизней
 var coin = 0; // Количество монет
 var moneyPerSec = 0; // Количество монет в секунду
-var killStreak = 0;
+var killStreak = 0; // Количество убитых монстров
 var curId = 0; 
 
 //Начальная загрузка 
@@ -20,7 +21,7 @@ window.addEventListener ("load", function () {
 	changeMob(bioms[0].mobs[0], 0);
 	xpBar();
 	notify("test");
-	statUpdate(); 
+	statUpdate();
 });
 
 //Обновление статистики
@@ -42,6 +43,7 @@ function changeMob(newMob, worldId) {
 	document.getElementById("healthBar").style.width = Math.max(width, 0.0) + '%';
 	document.getElementById("health_bar_number").innerHTML = HP;
 	document.getElementById("current_mob_image").style.backgroundImage = 'url("' + curMob.picture +'")';
+	document.getElementById("mob_image_mask").style.mask = 'url("' + curMob.picture +'")';
 };
 
 
@@ -118,6 +120,11 @@ function reduceHP () {
 	document.getElementById("healthBar").style.width = Math.max(width, 0.0) + '%';
 	document.getElementById("health_bar_number").innerHTML = HP;
 	console.log("curHP: " + HP + " maxHP: " + curMob.HP);
+	if (!isAnimationGoing) {
+		document.getElementById("current_mob_image").style.animationName = "didlidu";
+		isAnimationGoing = 1;
+		setTimeout(function(){document.getElementById("current_mob_image").style.animationName = ""; isAnimationGoing = 0;}, 300);
+	}
 	if (HP == 0) {
 		killStreak++;
 		let xpReward = curMob.XP + Math.round(Math.random() * 7) - 3; 
