@@ -22,6 +22,7 @@ window.addEventListener ("load", function () {
 	xpBar();
 	notify("test");
 	statUpdate();
+	setTimeout(function(){document.getElementById("toRemove").innerHTML = '';}, 3900);
 });
 
 //Обновление статистики
@@ -54,7 +55,7 @@ function makeList(object, parent, listType) {
 		let typeObject = document.createElement('div');
    		typeObject.className = "category";
 		parent.appendChild(typeObject);
-		typeObject.innerHTML = '<div class="info">' + object[i]['name'] + '</div>'; 
+		typeObject.innerHTML = '<div class="info">' + object[i].name + '</div>'; 
 
 		elemCount = object[i].items.length;
 
@@ -75,11 +76,11 @@ function makeList(object, parent, listType) {
 			curObject.onclick = function () {
 				let local_i = j, elem = curObject, curText = curUpgrade, itemType = i;
 				return function () {
-					console.log(object[itemType].items[local_i]);
 					if(object[itemType].items[local_i].cost <= coin && !object[itemType].items[local_i].status) {
 						coin -= object[itemType].items[local_i].cost;
 						//0 - Список единовременных, 1 - бесконечных
 						if(listType == 0) {
+							let itemFromHtml = document.getElementsByClassName('item');
 							object[itemType].items[local_i].status = true;	
 							curText = '<div class="upgrade_photo_container">' + '<div class="upgrade_photo" style="background-image: url(\'img/upgrades/done.png\'' +')"></div></div>'
 								+ '<div class="upgrade_description">' + '<h1>' + object[itemType].items[local_i].topName + '</h1><br>' + '<p>Куплено</p>';
@@ -87,6 +88,13 @@ function makeList(object, parent, listType) {
 							curObject.style.backgroundColor = '#009432';
 							object[itemType].cur = Math.max(object[itemType].cur, local_i);
 							damage += object[itemType].items[local_i].bonus;
+							if(itemType >= 1 && itemType <= 9) {
+								if(object[itemType].cur == -1) {
+									itemFromHtml[itemType - 1].style.backgroundImage = '';
+								} else {
+									itemFromHtml[itemType - 1].style.backgroundImage = 'url("' + object[itemType].items[object[itemType].cur].icon + '")';
+								}
+							}
 						} else {
 							object[itemType].items[local_i].cost = Math.round(object[itemType].items[local_i].cost * valCoef);
 							curText = '<div class="upgrade_photo_container">' + '<div class="upgrade_photo" style="background-image: url(' + '\'' + object[i].items[j].icon +  '\'' + ')"></div></div>' 
@@ -121,7 +129,7 @@ function reduceHP () {
 	document.getElementById("health_bar_number").innerHTML = HP;
 	console.log("curHP: " + HP + " maxHP: " + curMob.HP);
 	if (!isAnimationGoing) {
-		document.getElementById("current_mob_image").style.animationName = "didlidu";
+		document.getElementById("current_mob_image").style.animationName = "mob_punch";
 		isAnimationGoing = 1;
 		setTimeout(function(){document.getElementById("current_mob_image").style.animationName = ""; isAnimationGoing = 0;}, 300);
 	}

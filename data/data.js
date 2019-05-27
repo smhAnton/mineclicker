@@ -150,7 +150,7 @@ tempUpgrades =
     [
         {
             "name": "Необходимые блоки",
-            "cur": 0,
+            "cur": -1,
             "items":
             [
                 {
@@ -172,8 +172,164 @@ tempUpgrades =
         }
         ,
         {
+            "name": "Шлемы",
+            "cur": -1,
+            "items":
+            [
+                {
+                    "topName": "Сделать кожаный шлем",
+                    "cost": 3000,
+                    "bonus": 4,
+                    "icon": "img/upgrades/leather_helmet.png",
+                    "alreadySold": false
+                }
+                ,
+                {
+                    "topName": "Сделать железный шлем",
+                    "cost": 3000,
+                    "bonus": 4,
+                    "icon": "img/upgrades/iron_helmet.png",
+                    "alreadySold": false
+                }
+                ,
+                {
+                    "topName": "Сделать золотой шлем",
+                    "cost": 3000,
+                    "bonus": 4,
+                    "icon": "img/upgrades/golden_helmet.png",
+                    "alreadySold": false
+                }
+                ,
+                {
+                    "topName": "Сделать алмазный шлем",
+                    "cost": 3000,
+                    "bonus": 4,
+                    "icon": "img/upgrades/diamond_helmet.png",
+                    "alreadySold": false
+                }
+            ]
+        }
+        ,
+        {
+            "name": "Нагрудники",
+            "cur": -1,
+            "items":
+            [
+                {
+                    "topName": "Сделать кожаный нагрудник",
+                    "cost": 3000,
+                    "bonus": 4,
+                    "icon": "img/upgrades/leather_chestplate.png",
+                    "alreadySold": false
+                }
+                ,
+                {
+                    "topName": "Сделать железный нагрудник",
+                    "cost": 3000,
+                    "bonus": 4,
+                    "icon": "img/upgrades/iron_chestplate.png",
+                    "alreadySold": false
+                }
+                ,
+                {
+                    "topName": "Сделать золотой нагрудник",
+                    "cost": 3000,
+                    "bonus": 4,
+                    "icon": "img/upgrades/golden_chestplate.png",
+                    "alreadySold": false
+                }
+                ,
+                {
+                    "topName": "Сделать алмазный нагрудник",
+                    "cost": 3000,
+                    "bonus": 4,
+                    "icon": "img/upgrades/diamond_chestplate.png",
+                    "alreadySold": false
+                }
+            ]
+        }
+        ,
+        {
+            "name": "Поножи",
+            "cur": -1,
+            "items":
+            [
+                {
+                    "topName": "Сделать кожаные поножи",
+                    "cost": 200,
+                    "bonus": 1,
+                    "icon": "img/upgrades/leather_leggins.png",
+                    "alreadySold": false
+                }
+                ,
+                {
+                    "topName": "Сделать железные поножи",
+                    "cost": 3000,
+                    "bonus": 4,
+                    "icon": "img/upgrades/iron_leggins.png",
+                    "alreadySold": false
+                }
+                ,
+                {
+                    "topName": "Сделать золотые поножи",
+                    "cost": 3000,
+                    "bonus": 4,
+                    "icon": "img/upgrades/golden_leggins.png",
+                    "alreadySold": false
+                }
+                ,
+                {
+                    "topName": "Сделать алмазные поножи",
+                    "cost": 3000,
+                    "bonus": 4,
+                    "icon": "img/upgrades/diamond_leggins.png",
+                    "alreadySold": false
+                }
+            ]
+        }
+        ,
+        {
+            "name": "Ботинки",
+            "cur": -1,
+            "items":
+            [
+                {
+                    "topName": "Сделать кожаные ботинки",
+                    "cost": 200,
+                    "bonus": 1,
+                    "icon": "img/upgrades/leather_boots.png",
+                    "alreadySold": false
+                }
+                ,
+                {
+                    "topName": "Сделать железные ботинки",
+                    "cost": 3000,
+                    "bonus": 4,
+                    "icon": "img/upgrades/iron_boots.png",
+                    "alreadySold": false
+                }
+                ,
+                {
+                    "topName": "Сделать золотые ботинки",
+                    "cost": 3000,
+                    "bonus": 4,
+                    "icon": "img/upgrades/golden_boots.png",
+                    "alreadySold": false
+                }
+                ,
+                {
+                    "topName": "Сделать алмазные ботинки",
+                    "cost": 3000,
+                    "bonus": 4,
+                    "icon": "img/upgrades/diamond_boots.png",
+                    "alreadySold": false
+                }
+            ]
+        }
+        ,
+        {
             "name": "Мотыги",
-            "cur": 0,
+            "cur": -1,
             "items":
             [
                 {
@@ -220,7 +376,7 @@ tempUpgrades =
         ,
         {
             "name": "Лопаты",
-            "cur": 0,
+            "cur": -1,
             "items":
             [
                 {
@@ -267,7 +423,7 @@ tempUpgrades =
         ,
         {
             "name": "Топоры",
-            "cur": 0,
+            "cur": -1,
             "items":
             [
                 {
@@ -314,7 +470,7 @@ tempUpgrades =
         ,
         {
             "name": "Кирки",
-            "cur": 0,
+            "cur": -1,
             "items":
             [
                 {
@@ -361,7 +517,7 @@ tempUpgrades =
         ,
         {
             "name": "Мечи",
-            "cur": 0,
+            "cur": -1,
             "items":
             [
                 {
@@ -413,7 +569,7 @@ permanentUpgrades =
 [
     {
         "name": "Пассивный заработок",
-        "cur": 0,
+        "cur": -1,
         "items":
         [
             {

@@ -19,8 +19,17 @@ div {
     box-sizing: border-box;
 }
 
+@keyframes regress {
+    0% {width: 0%;}
+    15% {width: 30%;}
+    80% {width: 60%;}
+    100% {width: 100%;}
+}
 
-
+@keyframes show {
+    0% {background-color: rgba(255, 255, 255, 1);}
+    100% {background-color: rgba(255, 255, 255, 0);}
+}
 div#main_container {
     display: flex;
     flex-direction: row;
@@ -29,6 +38,54 @@ div#main_container {
     align-items: flex-start;
 }
 
+div#loaderBG {
+    position: absolute;
+    background-color: white;
+    height: 100vh;
+    width: 100vw;
+    z-index: 99;
+}
+div#logo {
+    width: 100vw;
+    height: 70vh;
+    z-index: 102;
+    padding-left: 22vw;
+    padding-right: 22vw;
+    padding-top: 35vh;
+}
+div#logo_image {
+    width: 100%;
+    height: 100%;
+    background-image: url('img/logo/mojang.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 190;
+}
+div#screen {
+    width: 100%;
+    height: 100%;
+    z-index: 200;
+    animation-name: show;
+    animation-duration: 2.5s;
+}
+div#bar_div {
+    padding-left: 19vw;
+    padding-right: 19vw;
+    z-index: 102;
+}
+div#bar_container {
+    border: 5px solid black;
+    width: 100%;
+    z-index: 102;    
+    height: 3vh;
+}
+div#progress_bar {
+    height: 100%;
+    width: 100%;
+    background-color: #e84118;
+    animation-name: regress;
+    animation-duration: 3.5s;
+}
 
 
 div#left_container {
@@ -114,7 +171,6 @@ div#weapon {
     height: 30%;
 }
 div.item {
-    background-image: url("img/item/cake.png");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -201,7 +257,7 @@ mask#mob_image_mask {
     background-color: rgb(255, 0, 0, 100);
 }
 
-@keyframes didlidu {
+@keyframes mob_punch {
     0% {transform: rotate(0);}
     30% {transform: rotate(15deg);}
     35% {transform: rotate(15deg);}
