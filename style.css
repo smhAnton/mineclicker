@@ -133,11 +133,10 @@ div#player_level_2 {
     display: inline-block;
     background-image: url('img/block/fullxpBar.png');
     background-repeat: no-repeat;
-    /*тут ты модешь поставить bgsize - cover и будет более-менее покрывать опыт*/
     background-size: contain;
     background-position: center;
-    width: 100%;
-    height: 100%;
+    width: 28%;
+    height: 28%;
 }
 div#armor {
     display: inline-flex;

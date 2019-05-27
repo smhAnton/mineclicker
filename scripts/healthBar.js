@@ -149,6 +149,12 @@ function reduceHP () {
   	statUpdate();
 };
 
+//Запрет правой кнопки
+document.oncontextmenu = cmenu; 
+function cmenu() { 
+	return false; 
+}
+
 //Обработка ежесекундного прироста
 setInterval(function() {coin = round(coin +  moneyPerSec / 10, 1); statUpdate();}, 100);   
 
