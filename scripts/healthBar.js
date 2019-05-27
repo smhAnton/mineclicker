@@ -54,7 +54,7 @@ function makeList(object, parent, listType) {
 		let typeObject = document.createElement('div');
    		typeObject.className = "category";
 		parent.appendChild(typeObject);
-		typeObject.innerHTML = '<div class="info">' + object[i].name + '</div>'; 
+		typeObject.innerHTML = '<div class="info">' + object[i]['name'] + '</div>'; 
 
 		elemCount = object[i].items.length;
 
@@ -85,7 +85,7 @@ function makeList(object, parent, listType) {
 								+ '<div class="upgrade_description">' + '<h1>' + object[itemType].items[local_i].topName + '</h1><br>' + '<p>Куплено</p>';
 							curObject.innerHTML = curText;
 							curObject.style.backgroundColor = '#009432';
-							object[itemType].cur++;
+							object[itemType].cur = Math.max(object[itemType].cur, local_i);
 							damage += object[itemType].items[local_i].bonus;
 						} else {
 							object[itemType].items[local_i].cost = Math.round(object[itemType].items[local_i].cost * valCoef);
