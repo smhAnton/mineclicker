@@ -4,7 +4,7 @@
 }
 body {
     font-family: "Minefont", 'Courier New', Courier, monospace;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
 }
 * {
@@ -42,11 +42,15 @@ div#left_container {
     height: 100vh;
 }
 div#player {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
     background-image: url('img/block/plank.png');
     width: 100%;
     height: 67%;
     border: 0px solid black;
-    text-align: center;
 }
 
 
@@ -57,33 +61,68 @@ div#player_level {
     justify-content: center;
     align-items: center;
     height: 15%;
-    padding: 20px 20px 20px 20px;
-
+    width: 100%;
 }
 div#player_level_1 {
+    display: inline-block;
     background-image: url('img/block/emptyxpBar.png');
     background-repeat: no-repeat;
     background-size: contain;
-    width: 100%;
-    height: 100%;
+    background-position: center;
+    width: 80%;
+    height: 50%;
 }
 div#player_level_2 {
+    display: inline-block;
     background-image: url('img/block/fullxpBar.png');
     background-repeat: no-repeat;
+    /*тут ты модешь поставить bgsize - cover и будет более-менее покрывать опыт*/
     background-size: contain;
+    background-position: center;
     width: 100%;
     height: 100%;
 }
-
-
-
+div#armor {
+    display: inline-flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;    
+    width: 30%;
+    height: 80%;
+}
+div#image_and_weapon {
+    display: inline-block;
+    width: 70%;
+    height: 80%;
+}
 div#player_image {
     background-image: url("img/steve.png");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     width: 100%;
-    height: 80%;
+    height: 70%;
+}
+div#weapon {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 30%;
+}
+div.item {
+    background-image: url("img/item/cake.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #c6c6c6;
+    border: 2px solid;
+    border-color: #555 white white #555;
+    width: 60px;
+    height: 60px;
 }
 
 
