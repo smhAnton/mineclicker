@@ -29,7 +29,7 @@ window.addEventListener ("load", function () {
 		setTimeout (function () {
 			document.getElementById("toRemove").style.display = 'none';
 			notify("Добро пожаловать в Майнкрафт кликер!");
-		}, 4000);
+		}, 100);
 	}, 3900); //3900
 });
 
@@ -38,6 +38,8 @@ function statUpdate() {
 	let curStat = '<div class="stat_block">У вас <br>' + curLevel + '<br>уровень</div><div class="stat_block">Ваш урон равен<br>' + damage + '</div><div class="stat_block">Количество опыта:<br>' + XP + '</div><div class="stat_block">Убито монстров:<br>' +
 					killStreak + '</div><div class="stat_block">Ваши сбережения:<br>' + coin.toFixed(1) + 'g</div><div class="stat_block">Количество монет в секунду:<br>' + moneyPerSec.toFixed(1) + 'g</div>	'; 
 	document.getElementById("stats").innerHTML = curStat;
+	createBioms();
+	xpBar();
 }
 
 
@@ -156,7 +158,7 @@ function reduceHP () {
 	if (HP == 0) {
 		killStreak++;
 		let xpReward = curMob.XP + Math.round(Math.random() * 7) - 3; 
-		notify("Вы победиили! Ваша награда: " + xpReward + " опыта");
+		notify("Вы победили! Ваша награда: " + xpReward + " опыта");
 		XP += xpReward;
 		if(XP >= xpGoal) {
 			curLevel++;
@@ -182,7 +184,8 @@ setInterval(function() {coin = round(coin +  moneyPerSec / 10, 1); statUpdate();
 
 //Обработка опыта
 function xpBar() {
-	let xpBarElement = document.getElementById("player_level_1");
+	document.getElementById('player_level_2').style.width = XP / xpGoal * 100 + '%'
+	document.getElementById('xp_text').innerHTML = XP + 'xp'; 
 }
 
 //проигрывает звук урона моба
