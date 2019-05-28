@@ -160,7 +160,7 @@ function reduceHP () {
 		let xpReward = curMob.XP + Math.round(Math.random() * 7) - 3; 
 		notify("Вы победили! Ваша награда: " + xpReward + " опыта");
 		XP += xpReward;
-		if(XP >= xpGoal) {
+		while (XP >= xpGoal) {
 			curLevel++;
 			notify("У вас новый уровень!");
 			createBioms();

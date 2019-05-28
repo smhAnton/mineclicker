@@ -10,7 +10,7 @@
                 "level": 1,
                 "HP": 50,
                 "XP": 25,
-                "sounds": ["sounds/chicken_hurt_1.ogg", "sounds/chicken_hurt_2.ogg"]
+                "sounds": ["sounds/ChickenHurt1.ogg", "sounds/ChickenHurt2.ogg"]
             },
             {
                 "name": "Свинья",
@@ -18,22 +18,23 @@
                 "level": 3,
                 "HP": 100,
                 "XP": 50,
-                "sounds": ["sounds/pig_hurt.ogg"]
+                "sounds": ["sounds/PigHurt1.ogg", "sounds/PigHurt2.ogg"]
             },
             {
                 "name": "Корова",
                 "picture": "img/mobs/cow.png",
                 "level": 6,
-                "HP": 200,
+                "HP": 200, 
                 "XP": 75,
-                "sounds": ["sounds/cow_hurt.ogg"]
+                "sounds": ["sounds/CowHurt2.ogg", "sounds/CowHurt3.ogg"]
             },
             {
                 "name": "Железный голем",
                 "picture": "img/mobs/golem.png",
                 "level": 9,
                 "HP": 400,
-                "XP": 100
+                "XP": 100,
+                "sounds": ["sounds/IronGolemHurt1.ogg", "sounds/IronGolemHurt2.ogg"]
             }
         ]
     },
@@ -47,28 +48,32 @@
                 "picture": "img/mobs/zombie.png",
                 "level": 10,
                 "HP": 350,
-                "XP": 100
+                "XP": 100,
+                "sounds": ["sounds/ZombieHurt1.ogg", "sounds/ZombieHurt2.ogg"]
             },
             {
                 "name": "Паук",
                 "picture": "img/mobs/spider.png",
                 "level": 14,
                 "HP": 600,
-                "XP": 150
+                "XP": 150,
+                "sounds": ["sounds/SpiderHurt1.ogg", "sounds/SpiderHurt2.ogg"]
             },
             {
                 "name": "Скелет",
                 "picture": "img/mobs/skeleton.png",
                 "level": 19,
                 "HP": 900,
-                "XP": 200
+                "XP": 200,
+                "sounds": ["sounds/SkeletonHurt1.ogg", "sounds/SkeletonHurt2.ogg"]
             },
             {
                 "name": "Крипер",
                 "picture": "img/mobs/crieper.png",
                 "level": 24,
                 "HP": 1400,
-                "XP": 300
+                "XP": 300,
+                "sounds": ["sounds/CreeperHurt1.ogg", "sounds/CreeperHurt3.ogg"]
             }
         ]
     },
@@ -82,28 +87,32 @@
                 "picture": "img/mobs/pigman.png",
                 "level": 25,
                 "HP": 1200,
-                "XP": 400
+                "XP": 400,
+                "sounds": ["sounds/ZpigHurt1.ogg", "sounds/ZpigHurt2.ogg"]
             },
             {
                 "name": "Ифрит",
                 "picture": "img/mobs/ifrit.png",
                 "level": 30,
                 "HP": 1800,
-                "XP": 550
+                "XP": 550,
+                "sounds": ["sounds/BlazeHurt1.ogg", "sounds/BlazeHurt2.ogg"]
             },
             {
                 "name": "Гаст",
                 "picture": "img/mobs/gust.png",
                 "level": 34,
                 "HP": 2500,
-                "XP": 700
+                "XP": 700,
+                "sounds": ["sounds/GhastHurt2.ogg", "sounds/GhastHurt4.ogg"]
             },
             {
                 "name": "Иссушитель",
                 "picture": "img/mobs/sucker.png",
                 "level": 39,
                 "HP": 3500,
-                "XP": 1000
+                "XP": 1000,
+                "sounds": ["sounds/WhitherHurt1.ogg", "sounds/WhitherHurt3.ogg"]
             }
         ]
     },
@@ -117,28 +126,32 @@
                 "picture": "img/mobs/enderman.png",
                 "level": 40,
                 "HP": 3200,
-                "XP": 1000
+                "XP": 1000,
+                "sounds": ["sounds/EndermanHurt2.ogg", "sounds/EndermanHurt3.ogg"]
             },
             {
                 "name": "Чешуйница края",
                 "picture": "img/mobs/endermite.png",
                 "level": 45,
                 "HP": 4400,
-                "XP": 1300
+                "XP": 1300,
+                "sounds": ["sounds/SilverfishHurt1.ogg", "sounds/SilverfishHurt2.ogg"]
             },
             {
                 "name": "Шалкер",
                 "picture": "img/mobs/shalker.png",
                 "level": 50,
                 "HP": 6000,
-                "XP": 2000
+                "XP": 2000,
+                "sounds": ["sounds/ShulkerHurt4.ogg", "sounds/ShulkerHurt6.ogg"]
             },
             {
                 "name": "Дракон Края",
                 "picture": "img/mobs/dragon.png",
                 "level": 60,
                 "HP": 20000,
-                "XP": 10000
+                "XP": 10000,
+                "sounds": ["sounds/EnderDragonHurt1.ogg", "sounds/EnderDragonHurt2.ogg"]
             }
         ]
     }

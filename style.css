@@ -126,7 +126,7 @@ div#player_level {
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    height: 15%;
+    height: 20%;
     width: 100%;
 }
 div#player_level_1 {
@@ -136,7 +136,7 @@ div#player_level_1 {
     background-size: contain;
     background-position: center;
     width: 80%;
-    height: 45%;
+    height: 33%;
     box-sizing: border-box;
     border: 3px solid black;
     background-color: #636e72;
@@ -154,6 +154,7 @@ p#xp_text {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
 div#armor {
     display: inline-flex;
     flex-direction: column;
@@ -161,19 +162,23 @@ div#armor {
     justify-content: space-around;
     align-items: center;    
     width: 30%;
-    height: 80%;
+    height: 60%;
 }
 div#image_and_weapon {
     display: inline-block;
     width: 70%;
     height: 80%;
+    text-align: center;
 }
 div#player_image {
+    border: 1px solid white;
+    display: inline-block;
+    background-color: black;
     background-image: url("img/steve.png");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    width: 100%;
+    width: 60%;
     height: 70%;
 }
 div#weapon {
