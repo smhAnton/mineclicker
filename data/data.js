@@ -163,9 +163,17 @@ tempUpgrades =
                 ,
                 {
                     "topName": "Создать печь",
-                    "cost": 2000,
-                    "bonus": 4,
+                    "cost": 50000,
+                    "bonus": 5,
                     "icon": "img/upgrades/pech.png",
+                    "alreadySold": false
+                }
+                ,
+                {
+                    "topName": "Создать стол зачарований",
+                    "cost": 1000000,
+                    "bonus": 25,
+                    "icon": "img/upgrades/enchanting_table.png",
                     "alreadySold": false
                 }
             ]
@@ -178,8 +186,8 @@ tempUpgrades =
             [
                 {
                     "topName": "Сделать кожаный шлем",
-                    "cost": 3000,
-                    "bonus": 4,
+                    "cost": 5000,
+                    "bonus": 0.5,
                     "icon": "img/upgrades/leather_helmet.png",
                     "alreadySold": false
                 }
@@ -217,8 +225,8 @@ tempUpgrades =
             [
                 {
                     "topName": "Сделать кожаный нагрудник",
-                    "cost": 3000,
-                    "bonus": 4,
+                    "cost": 8000,
+                    "bonus": 0.5,
                     "icon": "img/upgrades/leather_chestplate.png",
                     "alreadySold": false
                 }
@@ -256,8 +264,8 @@ tempUpgrades =
             [
                 {
                     "topName": "Сделать кожаные поножи",
-                    "cost": 200,
-                    "bonus": 1,
+                    "cost": 7000,
+                    "bonus": 0.5,
                     "icon": "img/upgrades/leather_leggins.png",
                     "alreadySold": false
                 }
@@ -295,8 +303,8 @@ tempUpgrades =
             [
                 {
                     "topName": "Сделать кожаные ботинки",
-                    "cost": 200,
-                    "bonus": 1,
+                    "cost": 4000,
+                    "bonus": 0.5,
                     "icon": "img/upgrades/leather_boots.png",
                     "alreadySold": false
                 }
@@ -334,7 +342,7 @@ tempUpgrades =
             [
                 {
                     "topName": "Сделать деревянную мотыгу",
-                    "cost": 200,
+                    "cost": 250,
                     "bonus": 1,
                     "icon": "img/upgrades/wood_motyga.png",
                     "alreadySold": false
@@ -342,32 +350,32 @@ tempUpgrades =
                 ,
                 {
                     "topName": "Сделать каменную мотыгу",
-                    "cost": 3000,
-                    "bonus": 4,
+                    "cost": 2500,
+                    "bonus": 1,
                     "icon": "img/upgrades/stone_motyga.png",
                     "alreadySold": false
                 }
                 ,
                 {
                     "topName": "Сделать железную мотыгу",
-                    "cost": 3000,
-                    "bonus": 4,
+                    "cost": 25000,
+                    "bonus": 1.5,
                     "icon": "img/upgrades/iron_motyga.png",
                     "alreadySold": false
                 }
                 ,
                 {
                     "topName": "Сделать золотую мотыгу",
-                    "cost": 3000,
-                    "bonus": 4,
+                    "cost": 250000,
+                    "bonus": 2,
                     "icon": "img/upgrades/golden_motyga.png",
                     "alreadySold": false
                 }
                 ,
                 {
                     "topName": "Сделать алмазную мотыгу",
-                    "cost": 3000,
-                    "bonus": 4,
+                    "cost": 2500000,
+                    "bonus": 2,
                     "icon": "img/upgrades/diamond_motyga.png",
                     "alreadySold": false
                 }
@@ -381,40 +389,40 @@ tempUpgrades =
             [
                 {
                     "topName": "Сделать деревянную лопату",
-                    "cost": 300,
-                    "bonus": 1.5,
+                    "cost": 400,
+                    "bonus": 1,
                     "icon": "img/upgrades/wooden_lop.png",
                     "alreadySold": false
                 }
                 ,
                 {
                     "topName": "Сделать каменную лопату",
-                    "cost": 5000,
-                    "bonus": 4.5,
+                    "cost": 4000,
+                    "bonus": 1,
                     "icon": "img/upgrades/stone_lop.png",
                     "alreadySold": false
                 }
                 ,
                 {
                     "topName": "Сделать железную лопату",
-                    "cost": 5000,
-                    "bonus": 4.5,
+                    "cost": 40000,
+                    "bonus": 1.5,
                     "icon": "img/upgrades/iron_lop.png",
                     "alreadySold": false
                 }
                 ,
                 {
                     "topName": "Сделать золотую лопату",
-                    "cost": 5000,
-                    "bonus": 4.5,
+                    "cost": 400000,
+                    "bonus": 2,
                     "icon": "img/upgrades/golden_lop.png",
                     "alreadySold": false
                 }
                 ,
                 {
                     "topName": "Сделать алмазную лопату",
-                    "cost": 5000,
-                    "bonus": 4.5,
+                    "cost": 4000000,
+                    "bonus": 2,
                     "icon": "img/upgrades/diamond_lop.png",
                     "alreadySold": false
                 }
@@ -429,30 +437,30 @@ tempUpgrades =
                 {
                     "topName": "Сделать деревянный топор",
                     "cost": 500,
-                    "bonus": 2,
+                    "bonus": 1,
                     "icon": "img/upgrades/wooden_axe.png",
                     "alreadySold": false
                 }
                 ,
                 {
                     "topName": "Сделать каменный топор",
-                    "cost": 9000,
-                    "bonus": 2,
+                    "cost": 5000,
+                    "bonus": 1,
                     "icon": "img/upgrades/stone_axe.png",
                     "alreadySold": false
                 }
                 ,
                 {
                     "topName": "Сделать железный топор",
-                    "cost": 9000,
-                    "bonus": 2,
+                    "cost": 50000,
+                    "bonus": 1.5,
                     "icon": "img/upgrades/iron_axe.png",
                     "alreadySold": false
                 }
                 ,
                 {
                     "topName": "Сделать золотой топор",
-                    "cost": 9000,
+                    "cost": 500000,
                     "bonus": 2,
                     "icon": "img/upgrades/golden_axe.png",
                     "alreadySold": false
@@ -460,7 +468,7 @@ tempUpgrades =
                 ,
                 {
                     "topName": "Сделать алмазный топор",
-                    "cost": 9000,
+                    "cost": 5000000,
                     "bonus": 2,
                     "icon": "img/upgrades/diamond_axe.png",
                     "alreadySold": false
@@ -475,39 +483,39 @@ tempUpgrades =
             [
                 {
                     "topName": "Сделать деревянную кирку",
-                    "cost": 800,
-                    "bonus": 3,
+                    "cost": 700,
+                    "bonus": 1,
                     "icon": "img/upgrades/wooden_pickaxe.png",
                     "alreadySold": false
                 }
                 ,
                 {
                     "topName": "Сделать каменную кирку",
-                    "cost": 13000,
-                    "bonus": 3,
+                    "cost": 7000,
+                    "bonus": 1,
                     "icon": "img/upgrades/stone_pickaxe.png",
                     "alreadySold": false
                 }
                 ,
                 {
                     "topName": "Сделать железную кирку",
-                    "cost": 13000,
-                    "bonus": 3,
+                    "cost": 70000,
+                    "bonus": 1.5,
                     "icon": "img/upgrades/iron_pickaxe.png",
                     "alreadySold": false
                 }
                 ,
                 {
                     "topName": "Сделать золотую кирку",
-                    "cost": 13000,
-                    "bonus": 3,
+                    "cost": 700000,
+                    "bonus": 2,
                     "icon": "img/upgrades/golden_pickaxe.png",
                     "alreadySold": false
                 }
                 ,
                 {
                     "topName": "Сделать алмазную кирку",
-                    "cost": 13000,
+                    "cost": 7000000,
                     "bonus": 3,
                     "icon": "img/upgrades/diamond_pickaxe.png",
                     "alreadySold": false
@@ -522,40 +530,40 @@ tempUpgrades =
             [
                 {
                     "topName": "Сделать деревянный меч",
-                    "cost": 1000,
-                    "bonus": 4,
+                    "cost": 1100,
+                    "bonus": 2,
                     "icon": "img/upgrades/wooden_sword.png",
                     "alreadySold": false
                 }
                 ,
                 {
                     "topName": "Сделать каменный меч",
-                    "cost": 20000,
-                    "bonus": 4,
+                    "cost": 11000,
+                    "bonus": 2,
                     "icon": "img/upgrades/stone_sword.png",
                     "alreadySold": false
                 }
                 ,
                 {
                     "topName": "Сделать железный меч",
-                    "cost": 20000,
-                    "bonus": 4,
+                    "cost": 110000,
+                    "bonus": 3,
                     "icon": "img/upgrades/iron_sword.png",
                     "alreadySold": false
                 }
                 ,
                 {
                     "topName": "Сделать золотой меч",
-                    "cost": 20000,
-                    "bonus": 4,
+                    "cost": 1100000,
+                    "bonus": 5,
                     "icon": "img/upgrades/golden_sword.png",
                     "alreadySold": false
                 }
                 ,
                 {
                     "topName": "Сделать алмазный меч",
-                    "cost": 20000,
-                    "bonus": 4,
+                    "cost": 11000000,
+                    "bonus": 5,
                     "icon": "img/upgrades/diamond_sword.png",
                     "alreadySold": false
                 }
@@ -601,6 +609,14 @@ permanentUpgrades =
                 "cost": 500000,
                 "bonus": 20,
                 "icon": "img/upgrades/bow.gif",
+                "alreadySold": false
+            }
+            ,
+            {
+                "topName": "Построить спавнер мобов",
+                "cost": 1000000,
+                "bonus": 40,
+                "icon": "img/upgrades/spawner.gif",
                 "alreadySold": false
             }
         ]
