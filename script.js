@@ -13,8 +13,9 @@ var HP, fullHP; // Текущее/ максимальное количество
 var coin = 0; // Количество монет
 var moneyPerSec = 0; // Количество монет в секунду
 var killStreak = 0; // Количество убитых монстров
-var curId = 0; 
+var curId = 0; // Выбранный мир 
 var notification_list = [], notification_displaying; //массив с уведомлениями и показывается ли уведомление сейчас
+var ost = new Audio ('sounds/ost.ogg');
 
 //Начальная загрузка 
 window.addEventListener ("load", function () {
@@ -29,7 +30,10 @@ window.addEventListener ("load", function () {
 		setTimeout (function () {
 			document.getElementById("toRemove").style.display = 'none';
 			notify("Добро пожаловать в Майнкрафт кликер!");
-		}, 100);
+		}, 500);
+		setInterval(function(){
+			ost.play();
+		}, 210*1000);
 	}, 3900); //3900
 });
 
