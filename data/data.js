@@ -207,24 +207,24 @@ tempUpgrades =
                 ,
                 {
                     "topName": "Сделать железный шлем",
-                    "cost": 3000,
-                    "bonus": 4,
+                    "cost": 50000,
+                    "bonus": 1,
                     "icon": "img/upgrades/iron_helmet.png",
                     "alreadySold": false
                 }
                 ,
                 {
                     "topName": "Сделать золотой шлем",
-                    "cost": 3000,
-                    "bonus": 4,
+                    "cost": 500000,
+                    "bonus": 2,
                     "icon": "img/upgrades/golden_helmet.png",
                     "alreadySold": false
                 }
                 ,
                 {
                     "topName": "Сделать алмазный шлем",
-                    "cost": 3000,
-                    "bonus": 4,
+                    "cost": 5000000,
+                    "bonus": 3,
                     "icon": "img/upgrades/diamond_helmet.png",
                     "alreadySold": false
                 }
@@ -246,24 +246,24 @@ tempUpgrades =
                 ,
                 {
                     "topName": "Сделать железный нагрудник",
-                    "cost": 3000,
-                    "bonus": 4,
+                    "cost": 80000,
+                    "bonus": 1,
                     "icon": "img/upgrades/iron_chestplate.png",
                     "alreadySold": false
                 }
                 ,
                 {
                     "topName": "Сделать золотой нагрудник",
-                    "cost": 3000,
-                    "bonus": 4,
+                    "cost": 800000,
+                    "bonus": 2,
                     "icon": "img/upgrades/golden_chestplate.png",
                     "alreadySold": false
                 }
                 ,
                 {
                     "topName": "Сделать алмазный нагрудник",
-                    "cost": 3000,
-                    "bonus": 4,
+                    "cost": 8000000,
+                    "bonus": 3,
                     "icon": "img/upgrades/diamond_chestplate.png",
                     "alreadySold": false
                 }
@@ -285,24 +285,24 @@ tempUpgrades =
                 ,
                 {
                     "topName": "Сделать железные поножи",
-                    "cost": 3000,
-                    "bonus": 4,
+                    "cost": 70000,
+                    "bonus": 1,
                     "icon": "img/upgrades/iron_leggins.png",
                     "alreadySold": false
                 }
                 ,
                 {
                     "topName": "Сделать золотые поножи",
-                    "cost": 3000,
-                    "bonus": 4,
+                    "cost": 700000,
+                    "bonus": 2,
                     "icon": "img/upgrades/golden_leggins.png",
                     "alreadySold": false
                 }
                 ,
                 {
                     "topName": "Сделать алмазные поножи",
-                    "cost": 3000,
-                    "bonus": 4,
+                    "cost": 7000000,
+                    "bonus": 3,
                     "icon": "img/upgrades/diamond_leggins.png",
                     "alreadySold": false
                 }
@@ -324,24 +324,24 @@ tempUpgrades =
                 ,
                 {
                     "topName": "Сделать железные ботинки",
-                    "cost": 3000,
-                    "bonus": 4,
+                    "cost": 40000,
+                    "bonus": 1,
                     "icon": "img/upgrades/iron_boots.png",
                     "alreadySold": false
                 }
                 ,
                 {
                     "topName": "Сделать золотые ботинки",
-                    "cost": 3000,
-                    "bonus": 4,
+                    "cost": 400000,
+                    "bonus": 2,
                     "icon": "img/upgrades/golden_boots.png",
                     "alreadySold": false
                 }
                 ,
                 {
                     "topName": "Сделать алмазные ботинки",
-                    "cost": 3000,
-                    "bonus": 4,
+                    "cost": 4000000,
+                    "bonus": 3,
                     "icon": "img/upgrades/diamond_boots.png",
                     "alreadySold": false
                 }
