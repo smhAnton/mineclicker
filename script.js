@@ -29,8 +29,8 @@ window.addEventListener ("load", function () {
 		setTimeout (function () {
 			document.getElementById("toRemove").style.display = 'none';
 			notify("Добро пожаловать в Майнкрафт кликер!");
-		}, 1100);
-	}, 100); //3900
+		}, 4000);
+	}, 3900); //3900
 });
 
 //Обновление статистики
@@ -156,7 +156,7 @@ function reduceHP () {
 	if (HP == 0) {
 		killStreak++;
 		let xpReward = curMob.XP + Math.round(Math.random() * 7) - 3; 
-		notify("Вы подебили! Ваша награда: " + xpReward + " опыта");
+		notify("Вы победиили! Ваша награда: " + xpReward + " опыта");
 		XP += xpReward;
 		if(XP >= xpGoal) {
 			curLevel++;
@@ -172,7 +172,7 @@ function reduceHP () {
 };
 
 //Запрет правой кнопки
-//document.oncontextmenu = cmenu; //не забыть вернуть на место
+document.oncontextmenu = cmenu; 
 function cmenu() { 
 	return false; 
 }

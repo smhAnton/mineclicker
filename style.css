@@ -245,6 +245,7 @@ div#bar{
     border: solid 2px black;
     width: 50%;
     height: 25px; 
+    background-color: #ecf0f1;
 }
 div#healthBar{
     background-color: #e74c3c;    
